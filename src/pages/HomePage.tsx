@@ -5,13 +5,12 @@ import { OrganizationSchema, WebsiteSchema } from '../components/seo/Schema';
 import { HomeSEOContent } from '../components/home/HomeSEOContent';
 import { NPREP_LINKS, SITE_LINKS } from '../data/links';
 import { blogPosts } from '../data/content';
-import { BlogThumbnail } from '../components/ui/BlogThumbnail';
+import { BlogCardImage } from '../components/ui/BlogCardImage';
 import { TestimonialTicker } from '../components/ui/TestimonialTicker';
 import { 
   Calendar, 
   CheckCircle, 
   BookOpen, 
-  TrendingUp, 
   ArrowRight,
   ChevronRight,
   Zap,
@@ -57,13 +56,12 @@ export const HomePage = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 -mt-16 relative z-10 mb-16">
-        {/* Quick Access Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+        {/* Quick Access Grid - Updated to 3 columns */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
           {[
             { title: "Notifications", icon: FileText, link: SITE_LINKS.notification, color: "text-blue-600" },
             { title: "Exam Date", icon: Calendar, link: SITE_LINKS.examDate, color: "text-indigo-600" },
             { title: "Eligibility", icon: CheckCircle, link: SITE_LINKS.eligibility, color: "text-green-600" },
-            { title: "Cut Off", icon: TrendingUp, link: SITE_LINKS.cutOff, color: "text-purple-600" },
           ].map((item, idx) => (
             <Link 
               key={idx} 
@@ -92,7 +90,7 @@ export const HomePage = () => {
                   Student Success Stories
                 </h2>
                 <div className="hidden md:flex items-center text-sm text-slate-500">
-                  <span className="w-2 h-2 rounded-full bg-green-500 mr-2"></span>
+                  <span className="w-2 h-2 rounded-full bg-green-50 mr-2"></span>
                   Verified Reviews
                 </div>
               </div>
@@ -120,10 +118,8 @@ export const HomePage = () => {
                     {/* Thumbnail for Home Feed */}
                     <div className="w-full md:w-1/3 flex-shrink-0">
                       <Link to={`/blog/${post.slug}`} className="block rounded-xl overflow-hidden">
-                        <BlogThumbnail 
-                          category={post.category}
-                          title={post.thumbnail.title}
-                          subtitle={post.thumbnail.subtitle}
+                        <BlogCardImage 
+                          post={post}
                           className="transform transition-transform duration-500 group-hover:scale-105"
                         />
                       </Link>
@@ -138,10 +134,8 @@ export const HomePage = () => {
                           {post.title}
                         </Link>
                       </h3>
-                      <p className="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-2">
-                        {post.excerpt}
-                      </p>
-                      <Link to={`/blog/${post.slug}`} className="text-sm font-bold text-blue-600 hover:text-blue-800 flex items-center">
+                      {/* Excerpt removed as requested */}
+                      <Link to={`/blog/${post.slug}`} className="text-sm font-bold text-blue-600 hover:text-blue-800 flex items-center mt-4">
                         Read Article <ArrowRight className="w-4 h-4 ml-1" />
                       </Link>
                     </div>
@@ -187,7 +181,6 @@ export const HomePage = () => {
                     { name: "Exam Date Info", link: SITE_LINKS.examDate },
                     { name: "Admit Card", link: SITE_LINKS.admitCard },
                     { name: "Result & Merit List", link: SITE_LINKS.result },
-                    { name: "Previous Cut Offs", link: SITE_LINKS.cutOff },
                   ].map((item, idx) => (
                     <Link 
                       key={idx}
@@ -221,7 +214,7 @@ export const HomePage = () => {
         </div>
       </div>
 
-      {/* SEO Content Block */}
+      {/* SEO Content Block - Placed just before footer */}
       <HomeSEOContent />
     </>
   );

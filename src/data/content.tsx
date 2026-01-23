@@ -23,6 +23,7 @@ export interface BlogPostData {
   excerpt: string;
   date: string;
   category: string;
+  imageUrl?: string; // Added optional image URL
   thumbnail: {
     title: string;
     subtitle: string;
@@ -352,6 +353,7 @@ export const blogPosts: BlogPostData[] = [
     excerpt: "Access authentic memory-based question papers for NORCET 7, 6, 5, 4, and 3. Practice real exam questions to boost your preparation.",
     date: "2026-05-28",
     category: "Downloads & Resources",
+    imageUrl: "https://iili.io/frEUi8B.png",
     thumbnail: {
       title: "NORCET PYQ Papers",
       subtitle: "Download PDF"
@@ -480,6 +482,7 @@ export const blogPosts: BlogPostData[] = [
     excerpt: "Projected salary structure for AIIMS Nursing Officers under the 8th Pay Commission. Analysis of fitment factors, revised basic pay, and expected in-hand salary.",
     date: "2026-06-01",
     category: "Salary & Career",
+    imageUrl: "https://iili.io/frESX5P.png",
     thumbnail: {
       title: "AIIMS Nursing Officer 2026",
       subtitle: "Salary & 8th Pay Commission"
@@ -628,6 +631,7 @@ export const blogPosts: BlogPostData[] = [
     excerpt: "Comparing salary, job profile, work-life balance, and career growth between AIIMS Nursing Officer and Railway Staff Nurse.",
     date: "2026-05-18",
     category: "Career Guidance",
+    imageUrl: "https://iili.io/frEg0cQ.png",
     thumbnail: {
       title: "NORCET vs RRB Staff Nurse",
       subtitle: "Detailed Comparison"
@@ -715,6 +719,7 @@ export const blogPosts: BlogPostData[] = [
     excerpt: "Detailed topic-wise analysis of past 5 years of NORCET papers. Identify high-yield topics for 2026.",
     date: "2026-05-15",
     category: "Previous Year Questions",
+    imageUrl: "https://iili.io/frEe6VR.png",
     thumbnail: {
       title: "AIIMS NORCET 2026",
       subtitle: "PYQ Analysis 2020-25"
@@ -784,6 +789,7 @@ export const blogPosts: BlogPostData[] = [
     excerpt: "A day-by-day study schedule to cover the entire syllabus in 90 days with revision slots.",
     date: "2026-05-25",
     category: "Study Plan",
+    imageUrl: "https://iili.io/frEv8ZJ.png",
     thumbnail: {
       title: "AIIMS NORCET 2026",
       subtitle: "3 Month Study Plan"

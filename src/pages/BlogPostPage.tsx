@@ -4,7 +4,7 @@ import { SEO } from '../components/seo/SEO';
 import { BreadcrumbSchema } from '../components/seo/Schema';
 import { blogPosts } from '../data/content';
 import { Calendar, ChevronRight, Home, User, Tag } from 'lucide-react';
-import { BlogThumbnail } from '../components/ui/BlogThumbnail';
+import { BlogCardImage } from '../components/ui/BlogCardImage';
 
 export const BlogPostPage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -28,7 +28,8 @@ export const BlogPostPage = () => {
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": `https://norcetexam.com/blog/${post.slug}`
-    }
+    },
+    "image": post.imageUrl || "https://norcetexam.com/logo.png"
   };
 
   return (
@@ -65,10 +66,8 @@ export const BlogPostPage = () => {
             <header className="mb-8 border-b border-gray-100 pb-8">
               {/* Hero Thumbnail */}
               <div className="mb-8 rounded-xl overflow-hidden shadow-lg">
-                <BlogThumbnail 
-                   category={post.category}
-                   title={post.thumbnail.title}
-                   subtitle={post.thumbnail.subtitle}
+                <BlogCardImage 
+                   post={post}
                 />
               </div>
 

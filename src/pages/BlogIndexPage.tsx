@@ -2,8 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/seo/SEO';
 import { blogPosts } from '../data/content';
-import { Calendar, ChevronRight, Tag, ArrowRight } from 'lucide-react';
-import { BlogThumbnail } from '../components/ui/BlogThumbnail';
+import { Calendar, ArrowRight } from 'lucide-react';
+import { BlogCardImage } from '../components/ui/BlogCardImage';
 
 export const BlogIndexPage = () => {
   return (
@@ -28,10 +28,8 @@ export const BlogIndexPage = () => {
             <article key={post.slug} className="flex flex-col bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
               {/* Thumbnail */}
               <Link to={`/blog/${post.slug}`} className="block overflow-hidden">
-                <BlogThumbnail 
-                  category={post.category}
-                  title={post.thumbnail.title}
-                  subtitle={post.thumbnail.subtitle}
+                <BlogCardImage 
+                  post={post}
                   className="transform transition-transform duration-500 group-hover:scale-105"
                 />
               </Link>
@@ -43,15 +41,13 @@ export const BlogIndexPage = () => {
                   </span>
                 </div>
                 
-                <h2 className="text-xl font-bold text-slate-900 mb-3 leading-snug group-hover:text-blue-700 transition-colors">
+                <h2 className="text-xl font-bold text-slate-900 mb-6 leading-snug group-hover:text-blue-700 transition-colors">
                   <Link to={`/blog/${post.slug}`}>
                     {post.title}
                   </Link>
                 </h2>
                 
-                <p className="text-slate-600 text-sm mb-4 flex-grow line-clamp-3">
-                  {post.excerpt}
-                </p>
+                {/* Excerpt removed as requested */}
                 
                 <Link 
                   to={`/blog/${post.slug}`} 
