@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { NPREP_LINKS } from '../../data/links';
+import { Zap } from 'lucide-react';
 
 export const Footer = () => {
   return (
@@ -12,9 +13,10 @@ export const Footer = () => {
             <p className="text-sm leading-relaxed text-slate-400 mb-4">
               norcetexam.com is the leading informational authority for the AIIMS Nursing Officer Recruitment Common Eligibility Test (NORCET). We provide up-to-date notifications, syllabus breakdowns, and preparation strategies for nursing aspirants.
             </p>
-            <p className="text-xs text-slate-500">
-              Recommended Preparation Partner: <a href={NPREP_LINKS.home} target="_blank" rel="nofollow noopener noreferrer" className="text-aiims-light hover:underline">NPrep Nursing</a>
-            </p>
+            <div className="flex items-center gap-2 text-sm text-slate-400">
+              <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+              <span>Updated for NORCET 2026 Cycle</span>
+            </div>
           </div>
 
           <div>
@@ -38,8 +40,27 @@ export const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-slate-800 mt-12 pt-8 text-center">
-          <p className="text-xs text-slate-500 mb-2">
+        {/* Powered By Section */}
+        <div className="border-t border-slate-800 mt-12 pt-8 flex flex-col items-center">
+          <div className="mb-8 flex flex-col items-center group">
+             <span className="text-[10px] uppercase tracking-widest text-slate-500 mb-2 font-semibold">In Association With</span>
+             <a 
+               href={NPREP_LINKS.home} 
+               target="_blank" 
+               rel="noreferrer" 
+               className="flex items-center gap-3 bg-slate-800 px-6 py-3 rounded-xl border border-slate-700 hover:border-blue-500 hover:bg-slate-750 transition-all"
+             >
+                <div className="bg-blue-600 p-1.5 rounded-lg text-white">
+                  <Zap size={20} fill="currentColor" />
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-lg font-bold text-white leading-none group-hover:text-blue-400 transition-colors">NPrep</span>
+                  <span className="text-[10px] text-slate-400 uppercase tracking-wide">India's Top Nursing Institute</span>
+                </div>
+             </a>
+          </div>
+
+          <p className="text-xs text-slate-500 mb-2 text-center max-w-2xl">
             Disclaimer: norcetexam.com is an independent informational website and is not affiliated with AIIMS. Official updates are published on aiimsexams.ac.in.
           </p>
           <p className="text-sm text-slate-400">

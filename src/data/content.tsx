@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { NPREP_LINKS, SITE_LINKS, OFFICIAL_LINKS } from './links';
-import { ExternalLink, Bell, FileText, Download, TrendingUp, DollarSign, BookOpen, AlertCircle } from 'lucide-react';
+import { ExternalLink, Bell, FileText, Download, TrendingUp, DollarSign, BookOpen, AlertCircle, CheckCircle } from 'lucide-react';
 import { 
   TableOfContents, 
   Callout, 
@@ -44,29 +44,29 @@ export interface BlogPostData {
 const NPrepCTA = ({ variant = 'general' }: { variant?: 'general' | 'test' | 'revision' | 'pyq' }) => {
   const content = {
     general: {
-      title: "Crack NORCET 2026 & RRB with NPrep GOLD",
-      text: "Comprehensive prep for NORCET 10 & 11, RRB, CHO, BTSC & KGMU. 900+ Hours of Theory & Clinicals.",
+      title: "Crack NORCET 2026 with NPrep GOLD",
+      text: "The most comprehensive course for AIIMS NORCET. 900+ Hours of Theory, Clinicals & Test Series.",
       link: NPREP_LINKS.gold,
-      btn: "Join GOLD Batch",
+      btn: "Explore GOLD Batch",
       color: "bg-blue-50 border-blue-200"
     },
     test: {
-      title: "Practice Makes Perfect",
-      text: "30,000+ Questions with explanations. Subject-wise tests & Daily Test Series for NORCET & RRB.",
+      title: "NORCET 2026 Test Series",
+      text: "30,000+ Questions with explanations. Subject-wise tests & Daily Test Series designed for NORCET pattern.",
       link: NPREP_LINKS.testSeries,
-      btn: "Start Test Series",
+      btn: "Start Practicing",
       color: "bg-indigo-50 border-indigo-200"
     },
     revision: {
       title: "Rapid Revision 2.0",
-      text: "Cover complete nursing syllabus for NORCET & RRB in just 100 Hours. Includes QBank & PYQs.",
+      text: "Revise entire NORCET syllabus in 100 Hours. Perfect for last-minute preparation.",
       link: NPREP_LINKS.rapid,
       btn: "Start Revision",
       color: "bg-purple-50 border-purple-200"
     },
     pyq: {
-      title: "Solve Previous Papers",
-      text: "Download and practice solved papers for NORCET & RRB exams.",
+      title: "Solve Previous NORCET Papers",
+      text: "Download and practice solved memory-based papers for NORCET 9, 8, 7 & 6.",
       link: NPREP_LINKS.pyq,
       btn: "Get PYQs",
       color: "bg-green-50 border-green-200"
@@ -74,20 +74,23 @@ const NPrepCTA = ({ variant = 'general' }: { variant?: 'general' | 'test' | 'rev
   }[variant];
 
   return (
-    <div className={`my-10 p-8 rounded-xl border ${content.color} shadow-sm not-prose`}>
+    <div className={`my-8 p-6 md:p-8 rounded-xl border ${content.color} shadow-sm not-prose`}>
       <div className="flex flex-col md:flex-row items-center justify-between gap-6">
         <div>
-          <h3 className="text-2xl font-bold text-slate-900 mb-2">{content.title}</h3>
-          <p className="text-slate-700 text-lg">{content.text}</p>
+          <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-2">{content.title}</h3>
+          <p className="text-slate-700">{content.text}</p>
         </div>
         <a 
           href={content.link} 
           target="_blank" 
           rel="nofollow noopener noreferrer"
-          className="flex-shrink-0 inline-flex items-center px-8 py-4 bg-slate-900 text-white font-bold rounded-xl hover:bg-slate-800 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+          className="flex-shrink-0 inline-flex items-center px-6 py-3 bg-slate-900 text-white font-bold rounded-lg hover:bg-slate-800 transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5 whitespace-nowrap"
         >
-          {content.btn} <ExternalLink className="ml-2 w-5 h-5" />
+          {content.btn} <ExternalLink className="ml-2 w-4 h-4" />
         </a>
+      </div>
+      <div className="mt-4 pt-4 border-t border-gray-200/50 text-xs text-slate-500 font-medium flex items-center">
+        <CheckCircle className="w-3 h-3 mr-1.5 text-green-600" /> Trusted by 50,000+ Nursing Officers
       </div>
     </div>
   );
@@ -113,15 +116,15 @@ const NewsItem = ({ date, title, isNew = false }: { date: string; title: string;
 const createPlaceholder = (slug: string, title: string): PillarPageData => ({
   slug,
   title,
-  description: `Detailed information about ${title}.`,
+  description: `Detailed information about ${title} for AIIMS NORCET 2026.`,
   lastUpdated: "2026-03-01",
   content: {
-    intro: `Content for ${title} is currently being updated with the latest official notifications.`,
-    highlights: [{ label: "Status", value: "Updating" }],
+    intro: `Content for ${title} is currently being updated with the latest official NORCET 2026 notifications.`,
+    highlights: [{ label: "Exam", value: "AIIMS NORCET 2026" }, { label: "Status", value: "Updating" }],
     sections: [
       { 
         title: "Information Coming Soon", 
-        content: <div className="p-4 bg-blue-50 text-blue-800 rounded">This section is being updated.</div> 
+        content: <div className="p-4 bg-blue-50 text-blue-800 rounded">This section is being updated to reflect the latest NORCET guidelines.</div> 
       }
     ],
     faqs: []
@@ -132,21 +135,21 @@ const createPlaceholder = (slug: string, title: string): PillarPageData => ({
 export const pillarPages: Record<string, PillarPageData> = {
   "norcet-notification": {
     slug: "norcet-notification",
-    title: "AIIMS NORCET 2026 Latest News & Official Notification Updates",
-    description: "Live updates for AIIMS NORCET 2026. Confirmed exam dates for NORCET-10: Prelims on April 11, 2026 and Mains on April 30, 2026.",
+    title: "AIIMS NORCET 2026 Notification (Official Updates)",
+    description: "Official AIIMS NORCET 2026 Notification. Confirmed exam dates for NORCET-10: Prelims on April 11, 2026 and Mains on April 30, 2026.",
     lastUpdated: "2026-02-28",
     content: {
-      intro: "Stay updated with the latest announcements from the Examination Section, AIIMS New Delhi. The official schedule for NORCET-10 has been released, confirming the exam dates for both Stage-I and Stage-II.",
+      intro: "The All India Institute of Medical Sciences (AIIMS), New Delhi has released the official schedule for the Nursing Officer Recruitment Common Eligibility Test (NORCET) 2026. This page tracks all official announcements, vacancies, and important dates strictly for NORCET-10 and NORCET-11 cycles.",
       highlights: [
         { label: "Exam Name", value: "NORCET-10 (2026)" },
-        { label: "Status", value: "Scheduled" },
+        { label: "Conducting Body", value: "AIIMS New Delhi" },
         { label: "Prelims Date", value: "11 April 2026" },
         { label: "Mains Date", value: "30 April 2026" },
         { label: "Official Portal", value: "aiimsexams.ac.in" }
       ],
       sections: [
         {
-          title: "🔴 Latest Official Updates (Live Feed)",
+          title: "Latest Official Updates (Live Feed)",
           content: (
             <div className="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden mb-8">
               <div className="bg-slate-50 px-4 py-3 border-b border-gray-200 flex items-center justify-between">
@@ -187,52 +190,212 @@ export const pillarPages: Record<string, PillarPageData> = {
           title: "Important Dates Tracker (NORCET-10)",
           content: (
             <div className="space-y-4">
-              <p className="text-slate-700">The official schedule for AIIMS NORCET-10 has been announced:</p>
-              <ul className="space-y-3">
-                <li className="flex items-center text-sm">
-                  <span className="w-32 font-bold text-slate-900">Stage-I (Prelims):</span>
-                  <span className="text-slate-600 font-medium text-blue-700">April 11, 2026</span>
-                </li>
-                <li className="flex items-center text-sm">
-                  <span className="w-32 font-bold text-slate-900">Stage-II (Mains):</span>
-                  <span className="text-slate-600 font-medium text-blue-700">April 30, 2026</span>
-                </li>
-              </ul>
+              <p className="text-slate-700">The official schedule for AIIMS NORCET-10 has been announced. Candidates must adhere to these timelines strictly.</p>
+              <div className="bg-white border border-gray-200 rounded-lg overflow-hidden">
+                <table className="min-w-full text-sm text-left">
+                  <thead className="bg-slate-100 font-bold text-slate-800">
+                    <tr><th className="p-4">Event</th><th className="p-4">Date</th></tr>
+                  </thead>
+                  <tbody className="divide-y divide-gray-200">
+                    <tr><td className="p-4 font-medium">Notification Release</td><td className="p-4">March 2026 (Expected)</td></tr>
+                    <tr><td className="p-4 font-medium">Online Application Start</td><td className="p-4">March 2026</td></tr>
+                    <tr><td className="p-4 font-medium">Application Closing</td><td className="p-4">End of March 2026</td></tr>
+                    <tr className="bg-blue-50"><td className="p-4 font-bold text-blue-900">Stage-I (Prelims) Exam</td><td className="p-4 font-bold text-blue-900">April 11, 2026</td></tr>
+                    <tr className="bg-indigo-50"><td className="p-4 font-bold text-indigo-900">Stage-II (Mains) Exam</td><td className="p-4 font-bold text-indigo-900">April 30, 2026</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-slate-500 italic mt-2">Note: Dates are subject to change by AIIMS New Delhi. Check official website regularly.</p>
               <NPrepCTA variant="general" />
             </div>
           )
         }
       ],
       faqs: [
-        { question: "Where can I find the official NORCET notification?", answer: "The official notification is ONLY published on www.aiimsexams.ac.in under the 'Recruitments' tab." },
-        { question: "Is the exam schedule for 2026 released?", answer: "Yes. NORCET-10 Prelims is scheduled for April 11, 2026, and Mains for April 30, 2026." }
+        { question: "Where is the official NORCET notification published?", answer: "The official notification is ONLY published on www.aiimsexams.ac.in under the 'Recruitments' tab." },
+        { question: "When is NORCET 2026 Prelims?", answer: "NORCET-10 Prelims is officially scheduled for April 11, 2026." },
+        { question: "Is there an age limit for NORCET 2026?", answer: "Yes, generally 18-30 years for General candidates, with age relaxation for OBC/SC/ST as per Govt rules." },
+        { question: "Can GNM students apply for NORCET?", answer: "Yes, GNM candidates can apply if they have 2 years of experience in a minimum 50-bedded hospital." },
+        { question: "Is the exam online or offline?", answer: "NORCET is a Computer Based Test (CBT) conducted online." },
+        { question: "How many times is NORCET conducted in a year?", answer: "Currently, AIIMS conducts NORCET twice a year (NORCET-10 and NORCET-11 for 2026)." },
+        { question: "What is the application fee?", answer: "Typically ₹3000 for General/OBC and ₹2400 for SC/ST/EWS (subject to confirmation in notification)." },
+        { question: "Is there negative marking?", answer: "Yes, 1/3rd mark is deducted for every wrong answer." }
       ]
     }
   },
   "norcet-syllabus": {
     slug: "norcet-syllabus",
-    title: "AIIMS NORCET Syllabus 2026 & Exam Pattern (Detailed Breakdown)",
-    description: "Detailed AIIMS NORCET Syllabus 2026. Topic-wise breakdown for Nursing subjects, General Intelligence, and Aptitude.",
-    lastUpdated: "2026-01-10",
+    title: "AIIMS NORCET Syllabus 2026 & Exam Pattern (Detailed Subject-Wise)",
+    description: "Complete and detailed syllabus for AIIMS NORCET 2026. Subject-wise breakdown for MSN, OBG, Peds, FON, and Aptitude.",
+    lastUpdated: "2026-03-01",
     content: {
-      intro: "Understanding the AIIMS NORCET Syllabus is the first step towards cracking this competitive exam. The syllabus comprises core nursing subjects along with a section on general intelligence and aptitude.",
+      intro: "The AIIMS NORCET Syllabus is vast and clinical-focused. Unlike state-level exams, NORCET prioritizes application-based knowledge. This guide breaks down the syllabus into high-yield subjects and topics that have historically appeared in the exam.",
       highlights: [
         { label: "Total Questions", value: "200 MCQs" },
+        { label: "Duration", value: "3 Hours (180 Mins)" },
         { label: "Negative Marking", value: "1/3 marks deducted" },
         { label: "Qualifying Marks", value: "50% (UR), 45% (OBC), 40% (SC/ST)" }
       ],
       sections: [
         {
-          title: "1. Medical-Surgical Nursing (MSN) - High Weightage",
+          title: "Exam Pattern Overview",
           content: (
             <div className="space-y-4">
-              <p>This is the most critical section, covering 30-40% of the exam. Focus on Cardiovascular, Respiratory, Neurology, and Renal systems.</p>
+              <p>NORCET follows a two-stage process (Prelims & Mains). Both stages have a similar syllabus but differ in difficulty and question type.</p>
+              <ul className="list-disc list-inside space-y-2 text-slate-700">
+                <li><strong>Prelims:</strong> Screening nature. Focuses on basic knowledge and aptitude.</li>
+                <li><strong>Mains:</strong> Selection nature. Focuses on clinical scenarios, priority-based questions, and image-based questions.</li>
+              </ul>
+              <div className="bg-yellow-50 p-4 border-l-4 border-yellow-400 text-sm text-yellow-900">
+                <strong>Note:</strong> The syllabus covers the entire B.Sc. Nursing / GNM curriculum, but the weightage varies significantly.
+              </div>
+            </div>
+          )
+        },
+        {
+          title: "1. Medical-Surgical Nursing (MSN)",
+          content: (
+            <div className="space-y-4">
+              <p><strong>Weightage: High (30-35%)</strong>. This is the backbone of NORCET.</p>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="bg-white p-4 border border-gray-200 rounded-lg">
+                  <h4 className="font-bold text-blue-700 mb-2">Cardiovascular System</h4>
+                  <ul className="text-sm space-y-1 text-slate-600">
+                    <li>Myocardial Infarction (MI) Management</li>
+                    <li>Heart Failure & Drugs (Digoxin, Diuretics)</li>
+                    <li>ECG Interpretation (Arrhythmias)</li>
+                    <li>Hypertension Guidelines</li>
+                  </ul>
+                </div>
+                <div className="bg-white p-4 border border-gray-200 rounded-lg">
+                  <h4 className="font-bold text-blue-700 mb-2">Nervous System</h4>
+                  <ul className="text-sm space-y-1 text-slate-600">
+                    <li>CVA (Stroke) - Ischemic vs Hemorrhagic</li>
+                    <li>Increased ICP Management</li>
+                    <li>GCS Scale & Neurological Assessment</li>
+                    <li>Meningitis & Seizure precautions</li>
+                  </ul>
+                </div>
+                <div className="bg-white p-4 border border-gray-200 rounded-lg">
+                  <h4 className="font-bold text-blue-700 mb-2">Respiratory System</h4>
+                  <ul className="text-sm space-y-1 text-slate-600">
+                    <li>COPD & Asthma Management</li>
+                    <li>Tuberculosis (DOTS Therapy)</li>
+                    <li>Chest Tube Drainage System</li>
+                    <li>ABG Analysis (Acid-Base Balance)</li>
+                  </ul>
+                </div>
+                <div className="bg-white p-4 border border-gray-200 rounded-lg">
+                  <h4 className="font-bold text-blue-700 mb-2">Renal System</h4>
+                  <ul className="text-sm space-y-1 text-slate-600">
+                    <li>Acute vs Chronic Renal Failure</li>
+                    <li>Dialysis (Hemodialysis/Peritoneal)</li>
+                    <li>Electrolyte Imbalances (Hyperkalemia)</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          )
+        },
+        {
+          title: "2. Fundamentals of Nursing (FON)",
+          content: (
+            <div className="space-y-4">
+              <p><strong>Weightage: High (25-30%)</strong>. Focuses on practical procedures and basic care.</p>
+              <ul className="list-disc list-inside space-y-1 text-slate-700 ml-2">
+                <li><strong>Vital Signs:</strong> Temperature, Pulse, Respiration, BP (Errors & Techniques).</li>
+                <li><strong>Procedures:</strong> NG Tube, Catheterization, IV Cannulation, IM Injection sites.</li>
+                <li><strong>CPR:</strong> Latest AHA Guidelines (BLS/ACLS).</li>
+                <li><strong>Biomedical Waste Management:</strong> Color coding of bins (Strictly asked).</li>
+                <li><strong>Positions:</strong> Therapeutic positions for various conditions.</li>
+              </ul>
+            </div>
+          )
+        },
+        {
+          title: "3. Obstetrics & Gynecology (OBG)",
+          content: (
+            <div className="space-y-4">
+              <p><strong>Weightage: Medium-High (15-20%)</strong>.</p>
+              <ul className="list-disc list-inside space-y-1 text-slate-700 ml-2">
+                <li><strong>Antenatal Care:</strong> Assessment, Leopold Maneuvers, EDD.</li>
+                <li><strong>Labor:</strong> Stages of Labor, Partograph, Fetal Monitoring.</li>
+                <li><strong>Complications:</strong> PPH, Preeclampsia/Eclampsia, Placenta Previa.</li>
+                <li><strong>Newborn Care:</strong> APGAR Score, Resuscitation, Breastfeeding.</li>
+              </ul>
+            </div>
+          )
+        },
+        {
+          title: "4. Pediatric Nursing",
+          content: (
+            <div className="space-y-4">
+              <p><strong>Weightage: Medium (10-15%)</strong>.</p>
+              <ul className="list-disc list-inside space-y-1 text-slate-700 ml-2">
+                <li>Growth & Development Milestones.</li>
+                <li>Congenital Heart Defects (Cyanotic/Acyanotic).</li>
+                <li>Immunization Schedule (Latest).</li>
+                <li>Common Disorders: Nephrotic Syndrome, Leukemia, Dehydration.</li>
+              </ul>
+            </div>
+          )
+        },
+        {
+          title: "5. Psychiatric Nursing",
+          content: (
+            <div className="space-y-4">
+              <p><strong>Weightage: Medium (10-15%)</strong>. Important for Mains (Clinical Scenarios).</p>
+              <ul className="list-disc list-inside space-y-1 text-slate-700 ml-2">
+                <li>MSE (Mental Status Examination).</li>
+                <li>Schizophrenia & Psychosis.</li>
+                <li>Mood Disorders (Depression/Mania).</li>
+                <li>Therapeutic Communication & Nurse-Patient Relationship.</li>
+                <li>Defense Mechanisms.</li>
+              </ul>
+            </div>
+          )
+        },
+        {
+          title: "6. Community Health Nursing (CHN)",
+          content: (
+            <div className="space-y-4">
+              <p><strong>Weightage: Low-Medium (5-10%)</strong>.</p>
+              <ul className="list-disc list-inside space-y-1 text-slate-700 ml-2">
+                <li>Epidemiology (Triad, Levels of Prevention).</li>
+                <li>National Health Programs.</li>
+                <li>Family Planning Methods.</li>
+                <li>Communicable Diseases & Vectors.</li>
+              </ul>
+            </div>
+          )
+        },
+        {
+          title: "7. General Aptitude & GK",
+          content: (
+            <div className="space-y-4">
+              <p><strong>Weightage: Fixed (20 Questions)</strong>. Often the rank decider.</p>
+              <ul className="list-disc list-inside space-y-1 text-slate-700 ml-2">
+                <li><strong>Reasoning:</strong> Blood Relations, Coding-Decoding, Series.</li>
+                <li><strong>Maths:</strong> Basic Arithmetic, Percentage, Profit/Loss.</li>
+                <li><strong>GK:</strong> Current Affairs (Health related), Basic Static GK.</li>
+              </ul>
+              <div className="mt-4">
+                 <p className="text-sm text-slate-500 italic">Preparation for the entire syllabus, including Aptitude, is handled comprehensively by <strong>NPrep</strong>.</p>
+                 <NPrepCTA variant="general" />
+              </div>
             </div>
           )
         }
       ],
       faqs: [
-        { question: "Is there negative marking in NORCET?", answer: "Yes, there is a negative marking of 1/3 marks for every incorrect answer." }
+        { question: "Does the syllabus change every year?", answer: "The core nursing syllabus remains consistent. However, the weightage of topics shifts. NPrep courses are updated annually to reflect these trends." },
+        { question: "Is there a specific book for the NORCET syllabus?", answer: "No single book covers everything perfectly. Standard nursing textbooks (Saunders, Lippincott) combined with NPrep notes are recommended." },
+        { question: "Are image-based questions part of the syllabus?", answer: "Yes, especially in Mains. You must be familiar with instruments, X-rays, and ECG strips." },
+        { question: "How much weightage does Aptitude carry?", answer: "Exactly 20 questions (10% of the paper). Ignoring this can cost you a good rank." },
+        { question: "Is Pharmacology important?", answer: "Direct Pharma questions are few, but Pharmacology is integrated into MSN (e.g., Drugs for MI, Emergency drugs)." },
+        { question: "Do I need to study Research & Management?", answer: "Yes, basic concepts of Research and Ward Management are asked (approx 5-8 questions)." },
+        { question: "Is the syllabus different for Prelims and Mains?", answer: "The syllabus topics are the same. Prelims tests basic knowledge/recall, while Mains tests clinical application/priority." },
+        { question: "Is there a skill test syllabus?", answer: "NORCET currently does not have a separate skill test; clinical skills are tested via scenario-based MCQs in Mains." }
       ]
     }
   },
@@ -247,6 +410,8 @@ export const pillarPages: Record<string, PillarPageData> = {
 
 // --- Blog Posts ---
 export const blogPosts: BlogPostData[] = [
+  // ... (Keeping existing blog posts as they are already high quality, just ensuring they are exported)
+  // Re-exporting the same blog posts from previous context to maintain data integrity
   {
     slug: "norcet-study-plan-3-months",
     title: "3-Month Study Plan for AIIMS NORCET Success (Day-by-Day Strategy)",
