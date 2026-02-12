@@ -219,7 +219,9 @@ export const pillarPages: Record<string, PillarPageData> = {
         { question: "Is the exam online or offline?", answer: "NORCET is a Computer Based Test (CBT) conducted online." },
         { question: "How many times is NORCET conducted in a year?", answer: "Currently, AIIMS conducts NORCET twice a year (NORCET-10 and NORCET-11 for 2026)." },
         { question: "What is the application fee?", answer: "Typically ₹3000 for General/OBC and ₹2400 for SC/ST/EWS (subject to confirmation in notification)." },
-        { question: "Is there negative marking?", answer: "Yes, 1/3rd mark is deducted for every wrong answer." }
+        { question: "Is there negative marking?", answer: "Yes, 1/3rd mark is deducted for every wrong answer." },
+        { question: "What is the validity of the NORCET score?", answer: "The rank list is usually valid for one year or until the next NORCET result is declared." },
+        { question: "Are final year students eligible?", answer: "No, you must have completed your degree/diploma and have a valid registration certificate on the closing date of application." }
       ]
     }
   },
@@ -238,25 +240,10 @@ export const pillarPages: Record<string, PillarPageData> = {
       ],
       sections: [
         {
-          title: "Exam Pattern Overview",
+          title: "1. Medical Surgical Nursing (MSN)",
           content: (
             <div className="space-y-4">
-              <p>NORCET follows a two-stage process (Prelims & Mains). Both stages have a similar syllabus but differ in difficulty and question type.</p>
-              <ul className="list-disc list-inside space-y-2 text-slate-700">
-                <li><strong>Prelims:</strong> Screening nature. Focuses on basic knowledge and aptitude.</li>
-                <li><strong>Mains:</strong> Selection nature. Focuses on clinical scenarios, priority-based questions, and image-based questions.</li>
-              </ul>
-              <div className="bg-yellow-50 p-4 border-l-4 border-yellow-400 text-sm text-yellow-900">
-                <strong>Note:</strong> The syllabus covers the entire B.Sc. Nursing / GNM curriculum, but the weightage varies significantly.
-              </div>
-            </div>
-          )
-        },
-        {
-          title: "1. Medical-Surgical Nursing (MSN)",
-          content: (
-            <div className="space-y-4">
-              <p><strong>Weightage: High (30-35%)</strong>. This is the backbone of NORCET.</p>
+              <p><strong>Weightage: High (30-35%)</strong>. This is the backbone of NORCET. Questions focus on pathophysiology, clinical management, and nursing interventions for system-wise disorders.</p>
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="bg-white p-4 border border-gray-200 rounded-lg">
                   <h4 className="font-bold text-blue-700 mb-2">Cardiovascular System</h4>
@@ -294,6 +281,7 @@ export const pillarPages: Record<string, PillarPageData> = {
                   </ul>
                 </div>
               </div>
+              <p className="text-xs text-slate-400 italic mt-2">Detailed preparation and topic-wise lectures are handled by NPrep.</p>
             </div>
           )
         },
@@ -301,7 +289,7 @@ export const pillarPages: Record<string, PillarPageData> = {
           title: "2. Fundamentals of Nursing (FON)",
           content: (
             <div className="space-y-4">
-              <p><strong>Weightage: High (25-30%)</strong>. Focuses on practical procedures and basic care.</p>
+              <p><strong>Weightage: High (25-30%)</strong>. Focuses on practical procedures and basic care. This section tests your readiness for day-to-day hospital duties.</p>
               <ul className="list-disc list-inside space-y-1 text-slate-700 ml-2">
                 <li><strong>Vital Signs:</strong> Temperature, Pulse, Respiration, BP (Errors & Techniques).</li>
                 <li><strong>Procedures:</strong> NG Tube, Catheterization, IV Cannulation, IM Injection sites.</li>
@@ -309,6 +297,7 @@ export const pillarPages: Record<string, PillarPageData> = {
                 <li><strong>Biomedical Waste Management:</strong> Color coding of bins (Strictly asked).</li>
                 <li><strong>Positions:</strong> Therapeutic positions for various conditions.</li>
               </ul>
+              <p className="text-xs text-slate-400 italic mt-2">Detailed preparation and procedure demonstrations are handled by NPrep.</p>
             </div>
           )
         },
@@ -316,13 +305,14 @@ export const pillarPages: Record<string, PillarPageData> = {
           title: "3. Obstetrics & Gynecology (OBG)",
           content: (
             <div className="space-y-4">
-              <p><strong>Weightage: Medium-High (15-20%)</strong>.</p>
+              <p><strong>Weightage: Medium-High (15-20%)</strong>. Critical for understanding maternal and newborn health, a key priority in AIIMS hospitals.</p>
               <ul className="list-disc list-inside space-y-1 text-slate-700 ml-2">
                 <li><strong>Antenatal Care:</strong> Assessment, Leopold Maneuvers, EDD.</li>
                 <li><strong>Labor:</strong> Stages of Labor, Partograph, Fetal Monitoring.</li>
                 <li><strong>Complications:</strong> PPH, Preeclampsia/Eclampsia, Placenta Previa.</li>
                 <li><strong>Newborn Care:</strong> APGAR Score, Resuscitation, Breastfeeding.</li>
               </ul>
+              <p className="text-xs text-slate-400 italic mt-2">Detailed preparation and clinical scenarios are handled by NPrep.</p>
             </div>
           )
         },
@@ -330,18 +320,34 @@ export const pillarPages: Record<string, PillarPageData> = {
           title: "4. Pediatric Nursing",
           content: (
             <div className="space-y-4">
-              <p><strong>Weightage: Medium (10-15%)</strong>.</p>
+              <p><strong>Weightage: Medium (10-15%)</strong>. Focuses on growth, development, and common childhood disorders.</p>
               <ul className="list-disc list-inside space-y-1 text-slate-700 ml-2">
                 <li>Growth & Development Milestones.</li>
                 <li>Congenital Heart Defects (Cyanotic/Acyanotic).</li>
                 <li>Immunization Schedule (Latest).</li>
                 <li>Common Disorders: Nephrotic Syndrome, Leukemia, Dehydration.</li>
               </ul>
+              <p className="text-xs text-slate-400 italic mt-2">Detailed preparation and growth charts are handled by NPrep.</p>
             </div>
           )
         },
         {
-          title: "5. Psychiatric Nursing",
+          title: "5. Community Health Nursing (CHN)",
+          content: (
+            <div className="space-y-4">
+              <p><strong>Weightage: Low-Medium (5-10%)</strong>. Covers public health, epidemiology, and national programs.</p>
+              <ul className="list-disc list-inside space-y-1 text-slate-700 ml-2">
+                <li>Epidemiology (Triad, Levels of Prevention).</li>
+                <li>National Health Programs.</li>
+                <li>Family Planning Methods.</li>
+                <li>Communicable Diseases & Vectors.</li>
+              </ul>
+              <p className="text-xs text-slate-400 italic mt-2">Detailed preparation and program updates are handled by NPrep.</p>
+            </div>
+          )
+        },
+        {
+          title: "6. Psychiatric Nursing",
           content: (
             <div className="space-y-4">
               <p><strong>Weightage: Medium (10-15%)</strong>. Important for Mains (Clinical Scenarios).</p>
@@ -352,20 +358,7 @@ export const pillarPages: Record<string, PillarPageData> = {
                 <li>Therapeutic Communication & Nurse-Patient Relationship.</li>
                 <li>Defense Mechanisms.</li>
               </ul>
-            </div>
-          )
-        },
-        {
-          title: "6. Community Health Nursing (CHN)",
-          content: (
-            <div className="space-y-4">
-              <p><strong>Weightage: Low-Medium (5-10%)</strong>.</p>
-              <ul className="list-disc list-inside space-y-1 text-slate-700 ml-2">
-                <li>Epidemiology (Triad, Levels of Prevention).</li>
-                <li>National Health Programs.</li>
-                <li>Family Planning Methods.</li>
-                <li>Communicable Diseases & Vectors.</li>
-              </ul>
+              <p className="text-xs text-slate-400 italic mt-2">Detailed preparation and case studies are handled by NPrep.</p>
             </div>
           )
         },
@@ -388,14 +381,16 @@ export const pillarPages: Record<string, PillarPageData> = {
         }
       ],
       faqs: [
-        { question: "Does the syllabus change every year?", answer: "The core nursing syllabus remains consistent. However, the weightage of topics shifts. NPrep courses are updated annually to reflect these trends." },
-        { question: "Is there a specific book for the NORCET syllabus?", answer: "No single book covers everything perfectly. Standard nursing textbooks (Saunders, Lippincott) combined with NPrep notes are recommended." },
+        { question: "Does the syllabus change every year?", answer: "The core nursing syllabus remains consistent. However, the weightage of topics shifts." },
+        { question: "Is there a specific book for the NORCET syllabus?", answer: "No single book covers everything perfectly. Standard nursing textbooks combined with NPrep notes are recommended." },
         { question: "Are image-based questions part of the syllabus?", answer: "Yes, especially in Mains. You must be familiar with instruments, X-rays, and ECG strips." },
         { question: "How much weightage does Aptitude carry?", answer: "Exactly 20 questions (10% of the paper). Ignoring this can cost you a good rank." },
         { question: "Is Pharmacology important?", answer: "Direct Pharma questions are few, but Pharmacology is integrated into MSN (e.g., Drugs for MI, Emergency drugs)." },
         { question: "Do I need to study Research & Management?", answer: "Yes, basic concepts of Research and Ward Management are asked (approx 5-8 questions)." },
         { question: "Is the syllabus different for Prelims and Mains?", answer: "The syllabus topics are the same. Prelims tests basic knowledge/recall, while Mains tests clinical application/priority." },
-        { question: "Is there a skill test syllabus?", answer: "NORCET currently does not have a separate skill test; clinical skills are tested via scenario-based MCQs in Mains." }
+        { question: "Is there a skill test syllabus?", answer: "NORCET currently does not have a separate skill test; clinical skills are tested via scenario-based MCQs in Mains." },
+        { question: "Does NORCET cover Microbiology?", answer: "Yes, focusing on sterilization, immunity, and hospital-acquired infections." },
+        { question: "Are there questions on Computers?", answer: "Occasionally 1-2 basic questions may appear in the Aptitude section." }
       ]
     }
   },

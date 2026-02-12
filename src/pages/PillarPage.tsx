@@ -6,6 +6,7 @@ import { Table } from '../components/ui/Table';
 import { pillarPages } from '../data/content';
 import { ChevronRight, Home, Calendar, UserCheck, ShieldCheck } from 'lucide-react';
 import { StickyTOC } from '../components/ui/StickyTOC';
+import { Accordion } from '../components/ui/Accordion';
 
 // Helper to slugify titles for IDs
 const slugify = (text: string) => {
@@ -164,21 +165,11 @@ export const PillarPage = () => {
                   </ul>
                 </div>
 
-                {/* FAQs */}
+                {/* FAQs with Accordion */}
                 <section id="faqs" className="mt-16 scroll-mt-28">
                   <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-8">Frequently Asked Questions</h2>
-                  <div className="space-y-4">
-                    {content.faqs.map((faq, idx) => (
-                      <div key={idx} className="bg-gray-50 rounded-xl border border-gray-200 overflow-hidden">
-                        <div className="p-5">
-                          <h3 className="text-lg font-bold text-slate-900 mb-2 flex items-start">
-                            <span className="text-blue-200 mr-3 font-black text-xl leading-none">Q.</span>
-                            {faq.question}
-                          </h3>
-                          <p className="text-slate-600 pl-8">{faq.answer}</p>
-                        </div>
-                      </div>
-                    ))}
+                  <div className="not-prose">
+                    <Accordion items={content.faqs} />
                   </div>
                 </section>
               </div>

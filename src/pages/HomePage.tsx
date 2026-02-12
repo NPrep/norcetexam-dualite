@@ -14,7 +14,8 @@ import {
   ArrowRight,
   ChevronRight,
   Zap,
-  FileText
+  FileText,
+  Award
 } from 'lucide-react';
 
 export const HomePage = () => {
@@ -27,35 +28,89 @@ export const HomePage = () => {
       <OrganizationSchema />
       <WebsiteSchema />
       
-      {/* Hero Section - Updated for 2026 */}
-      <div className="bg-gradient-to-b from-blue-50 to-white">
-        <div className="max-w-7xl mx-auto px-4 pt-16 pb-20 md:pt-24 md:pb-28 text-center">
-          <h1 className="text-4xl md:text-6xl font-extrabold text-slate-900 mb-6 tracking-tight leading-tight">
-            Crack <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">AIIMS NORCET 2026</span> <br className="hidden md:block" /> with Confidence
-          </h1>
-          <p className="text-lg md:text-xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">
-            The ultimate resource for Nursing Officer aspirants. Access official updates, detailed syllabus breakdowns, and India's most trusted preparation courses.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a 
-              href={NPREP_LINKS.gold} 
-              target="_blank" 
-              rel="noreferrer"
-              className="inline-flex items-center justify-center px-8 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 transition-all shadow-lg hover:shadow-blue-200 hover:-translate-y-1"
-            >
-              Start Complete Prep <ArrowRight className="ml-2 w-5 h-5" />
-            </a>
-            <Link 
-              to="/norcet-syllabus" 
-              className="inline-flex items-center justify-center px-8 py-4 bg-white text-slate-700 border border-gray-200 font-bold rounded-xl hover:bg-gray-50 hover:text-blue-600 transition-all shadow-sm hover:shadow-md"
-            >
-              View Syllabus
-            </Link>
+      {/* Hero Section - Updated for 2026 with Split Layout */}
+      <div className="bg-gradient-to-b from-blue-50 to-white relative overflow-hidden">
+        {/* Background decorative elements */}
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-blue-100/20 skew-x-12 transform origin-top-right"></div>
+        
+        <div className="max-w-7xl mx-auto px-4 pt-12 pb-16 md:pt-20 md:pb-24 relative z-10">
+          <div className="grid lg:grid-cols-12 gap-12 items-center">
+            
+            {/* Left Content */}
+            <div className="lg:col-span-7 text-center lg:text-left">
+              <div className="inline-flex items-center px-3 py-1 rounded-full bg-blue-100 text-blue-800 text-xs font-bold uppercase tracking-wide mb-6">
+                <span className="w-2 h-2 bg-blue-600 rounded-full mr-2 animate-pulse"></span>
+                Updated for NORCET 2026
+              </div>
+              <h1 className="text-4xl md:text-6xl font-extrabold text-slate-900 mb-6 tracking-tight leading-tight">
+                Crack <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">AIIMS NORCET 2026</span>
+              </h1>
+              <p className="text-lg md:text-xl text-slate-600 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                The ultimate authority resource for Nursing Officer aspirants. Access official updates, detailed syllabus breakdowns, and India's most trusted preparation courses.
+              </p>
+              <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+                <Link 
+                  to="/norcet-syllabus" 
+                  className="inline-flex items-center justify-center px-8 py-4 bg-slate-900 text-white font-bold rounded-xl hover:bg-slate-800 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
+                >
+                  View Syllabus
+                </Link>
+                <Link 
+                  to="/norcet-notification" 
+                  className="inline-flex items-center justify-center px-8 py-4 bg-white text-slate-700 border border-gray-200 font-bold rounded-xl hover:bg-gray-50 hover:text-blue-600 transition-all shadow-sm hover:shadow-md"
+                >
+                  Latest Updates
+                </Link>
+              </div>
+            </div>
+
+            {/* Right CTA Card */}
+            <div className="lg:col-span-5">
+              <div className="bg-white rounded-2xl shadow-2xl border border-blue-100 p-8 relative overflow-hidden transform transition-transform hover:scale-[1.02] duration-300">
+                <div className="absolute top-0 right-0 w-24 h-24 bg-yellow-400 rounded-full -mr-10 -mt-10 opacity-20 blur-2xl"></div>
+                
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="bg-yellow-100 p-2 rounded-lg text-yellow-700">
+                    <Award size={24} />
+                  </div>
+                  <span className="text-xs font-bold text-yellow-700 bg-yellow-50 px-2 py-1 rounded uppercase tracking-wider">
+                    Recommended
+                  </span>
+                </div>
+
+                <h3 className="text-2xl font-bold text-slate-900 mb-2">
+                  Crack NORCET 2026 with <span className="text-blue-600">NPrep GOLD</span>
+                </h3>
+                <p className="text-slate-600 mb-6 text-sm leading-relaxed">
+                  Join India's #1 Nursing Officer coaching. 900+ hours of clinical theory, daily tests, and rapid revision.
+                </p>
+
+                <ul className="space-y-3 mb-8">
+                  {['Complete Syllabus Coverage', 'Clinical Scenario Training', 'Daily Test Series'].map((feat, i) => (
+                    <li key={i} className="flex items-center text-sm text-slate-700 font-medium">
+                      <CheckCircle className="w-4 h-4 text-green-500 mr-2" /> {feat}
+                    </li>
+                  ))}
+                </ul>
+
+                <a 
+                  href={NPREP_LINKS.gold} 
+                  target="_blank" 
+                  rel="noreferrer"
+                  className="block w-full py-4 bg-blue-600 text-white text-center font-bold rounded-xl hover:bg-blue-700 transition-all shadow-lg hover:shadow-blue-200"
+                >
+                  Join GOLD Batch
+                </a>
+                <p className="text-center text-xs text-slate-400 mt-3">
+                  Trusted by 50,000+ Aspirants
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 -mt-16 relative z-10 mb-16">
+      <div className="max-w-7xl mx-auto px-4 -mt-8 relative z-10 mb-16">
         {/* Quick Access Grid - Updated to 3 columns */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
           {[
@@ -83,7 +138,7 @@ export const HomePage = () => {
           {/* Main Content */}
           <div className="lg:col-span-2 space-y-16">
             
-            {/* Student Success Stories (Replaces Resources & PYQ) */}
+            {/* Student Success Stories */}
             <section className="bg-slate-50 rounded-2xl p-6 md:p-8 border border-slate-100 overflow-hidden">
               <div className="flex items-center justify-between mb-2">
                 <h2 className="text-2xl md:text-3xl font-bold text-slate-900">
@@ -134,7 +189,6 @@ export const HomePage = () => {
                           {post.title}
                         </Link>
                       </h3>
-                      {/* Excerpt removed as requested */}
                       <Link to={`/blog/${post.slug}`} className="text-sm font-bold text-blue-600 hover:text-blue-800 flex items-center mt-4">
                         Read Article <ArrowRight className="w-4 h-4 ml-1" />
                       </Link>
