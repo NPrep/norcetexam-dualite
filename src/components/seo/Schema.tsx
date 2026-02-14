@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import Head from 'next/head';
 
 // Organization Schema
 export const OrganizationSchema = () => {
@@ -22,9 +22,12 @@ export const OrganizationSchema = () => {
   };
 
   return (
-    <Helmet>
-      <script type="application/ld+json">{JSON.stringify(schema)}</script>
-    </Helmet>
+    <Head>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+    </Head>
   );
 };
 
@@ -43,9 +46,12 @@ export const WebsiteSchema = () => {
   };
 
   return (
-    <Helmet>
-      <script type="application/ld+json">{JSON.stringify(schema)}</script>
-    </Helmet>
+    <Head>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+    </Head>
   );
 };
 
@@ -63,8 +69,11 @@ export const BreadcrumbSchema = ({ items }: { items: { name: string; item: strin
   };
 
   return (
-    <Helmet>
-      <script type="application/ld+json">{JSON.stringify(schema)}</script>
-    </Helmet>
+    <Head>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+    </Head>
   );
 };

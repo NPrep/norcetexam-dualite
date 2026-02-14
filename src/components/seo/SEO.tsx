@@ -1,5 +1,6 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import Head from 'next/head';
+import { useLocation } from 'react-router-dom';
 
 interface SEOProps {
   title: string;
@@ -20,18 +21,21 @@ export const SEO: React.FC<SEOProps> = ({
 }) => {
   const siteTitle = "norcetexam.com";
   const fullTitle = `${title} | ${siteTitle}`;
+  const siteUrl = "https://norcetexam.com";
+  const { pathname } = useLocation();
+  const canonical = canonicalUrl || `${siteUrl}${pathname}`;
 
   return (
-    <Helmet>
+    <Head>
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
-      <link rel="canonical" href={canonicalUrl || window.location.href} />
+      <link rel="canonical" href={canonical} />
       
       {/* Open Graph */}
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:type" content={type} />
-      <meta property="og:url" content={canonicalUrl || window.location.href} />
+      <meta property="og:url" content={canonical} />
       <meta property="og:site_name" content={siteTitle} />
       
       {/* Twitter */}
@@ -45,6 +49,6 @@ export const SEO: React.FC<SEOProps> = ({
       
       {/* Robots - Allow everything by default */}
       <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-    </Helmet>
+    </Head>
   );
 };
