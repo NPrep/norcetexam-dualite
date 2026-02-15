@@ -1,23 +1,20 @@
 import React from 'react';
 import Head from 'next/head';
+import { site } from '../../next/site';
 
 // Organization Schema
 export const OrganizationSchema = () => {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "norcetexam.com",
-    "url": "https://norcetexam.com",
-    "logo": "https://norcetexam.com/logo.png", // Placeholder
-    "sameAs": [
-      "https://facebook.com/nprep",
-      "https://twitter.com/nprep"
-    ],
+    "name": site.name,
+    "url": site.url,
+    "logo": `${site.url}${site.logoPath}`,
+    "email": site.email,
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+91-9999999999",
       "contactType": "customer service",
-      "email": "support@norcetexam.com"
+      "email": site.email
     }
   };
 
@@ -36,13 +33,8 @@ export const WebsiteSchema = () => {
   const schema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "norcetexam.com",
-    "url": "https://norcetexam.com",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://norcetexam.com/search?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
+    "name": site.name,
+    "url": site.url
   };
 
   return (
@@ -64,7 +56,7 @@ export const BreadcrumbSchema = ({ items }: { items: { name: string; item: strin
       "@type": "ListItem",
       "position": index + 1,
       "name": item.name,
-      "item": item.item.startsWith('http') ? item.item : `https://norcetexam.com${item.item}`
+      "item": item.item.startsWith('http') ? item.item : `${site.url}${item.item}`
     }))
   };
 

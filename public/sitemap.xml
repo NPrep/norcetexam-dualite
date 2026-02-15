@@ -1,80 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <!-- Homepage -->
   <url>
     <loc>https://norcetexam.com/</loc>
-    <lastmod>2026-02-12</lastmod>
+    <lastmod>2026-02-15</lastmod>
     <priority>1.0</priority>
   </url>
-
-  <!-- Core informational pages -->
   <url>
-    <loc>https://norcetexam.com/norcet-exam-pattern/</loc>
-    <lastmod>2026-02-12</lastmod>
+    <loc>https://norcetexam.com/about/</loc>
+    <lastmod>2026-02-15</lastmod>
     <priority>0.8</priority>
   </url>
-
   <url>
-    <loc>https://norcetexam.com/norcet-syllabus/</loc>
-    <lastmod>2026-02-12</lastmod>
+    <loc>https://norcetexam.com/aiims-nursing-officer-recruitment/</loc>
+    <lastmod>2026-02-15</lastmod>
     <priority>0.8</priority>
   </url>
-
   <url>
-    <loc>https://norcetexam.com/norcet-eligibility/</loc>
-    <lastmod>2026-02-12</lastmod>
-    <priority>0.7</priority>
+    <loc>https://norcetexam.com/blog/</loc>
+    <lastmod>2026-02-15</lastmod>
+    <priority>0.8</priority>
   </url>
-
   <url>
-    <loc>https://norcetexam.com/norcet-important-dates/</loc>
-    <lastmod>2026-02-12</lastmod>
-    <priority>0.7</priority>
+    <loc>https://norcetexam.com/contact/</loc>
+    <lastmod>2026-02-15</lastmod>
+    <priority>0.8</priority>
   </url>
-
   <url>
-    <loc>https://norcetexam.com/norcet-faq/</loc>
-    <lastmod>2026-02-12</lastmod>
-    <priority>0.7</priority>
+    <loc>https://norcetexam.com/courses/</loc>
+    <lastmod>2026-02-15</lastmod>
+    <priority>0.8</priority>
   </url>
-
   <url>
     <loc>https://norcetexam.com/norcet-admit-card/</loc>
-    <lastmod>2026-02-12</lastmod>
-    <priority>0.6</priority>
+    <lastmod>2026-02-15</lastmod>
+    <priority>0.8</priority>
   </url>
-
+  <url>
+    <loc>https://norcetexam.com/norcet-application-form/</loc>
+    <lastmod>2026-02-15</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://norcetexam.com/norcet-cut-off/</loc>
+    <lastmod>2026-02-15</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://norcetexam.com/norcet-eligibility/</loc>
+    <lastmod>2026-02-15</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://norcetexam.com/norcet-exam-date/</loc>
+    <lastmod>2026-02-15</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://norcetexam.com/norcet-notification/</loc>
+    <lastmod>2026-02-15</lastmod>
+    <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://norcetexam.com/norcet-result/</loc>
-    <lastmod>2026-02-12</lastmod>
-    <priority>0.6</priority>
+    <lastmod>2026-02-15</lastmod>
+    <priority>0.8</priority>
   </url>
-
   <url>
-    <loc>https://norcetexam.com/norcet-application/</loc>
-    <lastmod>2026-02-12</lastmod>
-    <priority>0.6</priority>
+    <loc>https://norcetexam.com/norcet-syllabus/</loc>
+    <lastmod>2026-02-15</lastmod>
+    <priority>0.8</priority>
   </url>
-
-  <!-- Coaching / Prep pages -->
   <url>
-    <loc>https://norcetexam.com/norcet-preparation/</loc>
-    <lastmod>2026-02-12</lastmod>
-    <priority>0.5</priority>
+    <loc>https://norcetexam.com/previous-year-papers/</loc>
+    <lastmod>2026-02-15</lastmod>
+    <priority>0.8</priority>
   </url>
-
-  <!-- Legal pages (if available) -->
   <url>
     <loc>https://norcetexam.com/privacy-policy/</loc>
-    <lastmod>2026-02-12</lastmod>
-    <priority>0.3</priority>
+    <lastmod>2026-02-15</lastmod>
+    <priority>0.8</priority>
   </url>
-
   <url>
-    <loc>https://norcetexam.com/terms-and-conditions/</loc>
-    <lastmod>2026-02-12</lastmod>
-    <priority>0.3</priority>
+    <loc>https://norcetexam.com/terms/</loc>
+    <lastmod>2026-02-15</lastmod>
+    <priority>0.8</priority>
   </url>
-
 </urlset>
