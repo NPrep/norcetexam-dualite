@@ -233,8 +233,7 @@ export const HomePage = () => {
                   {[
                     { name: "Syllabus & Pattern", link: SITE_LINKS.syllabus },
                     { name: "Exam Date Info", link: SITE_LINKS.examDate },
-                    { name: "Admit Card", link: SITE_LINKS.admitCard },
-                    { name: "Result & Merit List", link: SITE_LINKS.result },
+                    { name: "Application Form", link: SITE_LINKS.apply },
                   ].map((item, idx) => (
                     <Link 
                       key={idx}

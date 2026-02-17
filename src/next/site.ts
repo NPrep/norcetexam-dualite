@@ -3,6 +3,6 @@ export const site = {
   domain: "norcetexam.com",
   url: "https://norcetexam.com",
   description: "NORCET exam preparation with syllabus, eligibility, dates, and resources for AIIMS nursing officers.",
-  email: "administration@nprep.in",
+  phone: "+91 6377 6391 69",
   logoPath: "/favicon.svg"
 };
