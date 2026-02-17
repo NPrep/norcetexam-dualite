@@ -394,8 +394,162 @@ export const pillarPages: Record<string, PillarPageData> = {
       ]
     }
   },
-  "norcet-exam-date": createPlaceholder("norcet-exam-date", "AIIMS NORCET 2026 Exam Date"),
-  "norcet-eligibility": createPlaceholder("norcet-eligibility", "NORCET 2026 Eligibility Criteria"),
+  "norcet-exam-date": {
+    slug: "norcet-exam-date",
+    title: "AIIMS NORCET Exam Date 2026 (Stage-I & Stage-II Schedule)",
+    description: "Latest AIIMS NORCET exam date schedule with Prelims and Mains timelines, admit card window, and shift reporting guidance.",
+    lastUpdated: "2026-03-02",
+    content: {
+      intro: "AIIMS NORCET is conducted in two stages (Stage-I Prelims and Stage-II Mains). Based on the latest published schedule for the ongoing cycle, candidates should prepare using the Stage-I and Stage-II dates below and track admit card updates from the official AIIMS exams portal.",
+      highlights: [
+        { label: "Exam", value: "AIIMS NORCET 2026" },
+        { label: "Stage-I (Prelims)", value: "11 April 2026" },
+        { label: "Stage-II (Mains)", value: "30 April 2026" },
+        { label: "Mode", value: "Computer Based Test (CBT)" },
+        { label: "Official Website", value: "aiimsexams.ac.in" }
+      ],
+      sections: [
+        {
+          title: "NORCET 2026 Exam Date Timeline",
+          content: (
+            <div className="space-y-4">
+              <p className="text-slate-700">Use this working timeline to plan revision, mock tests, and document readiness. Candidates should cross-check every milestone on the official portal once notices are released.</p>
+              <div className="bg-white border border-gray-200 rounded-lg overflow-hidden">
+                <table className="min-w-full text-sm text-left">
+                  <thead className="bg-slate-100 font-bold text-slate-800">
+                    <tr><th className="p-4">Event</th><th className="p-4">Date / Window</th></tr>
+                  </thead>
+                  <tbody className="divide-y divide-gray-200">
+                    <tr><td className="p-4 font-medium">Notification & Detailed Advertisement</td><td className="p-4">March 2026</td></tr>
+                    <tr><td className="p-4 font-medium">Application Form Window</td><td className="p-4">March 2026 (expected)</td></tr>
+                    <tr><td className="p-4 font-medium">Application Correction</td><td className="p-4">As per AIIMS notice</td></tr>
+                    <tr className="bg-blue-50"><td className="p-4 font-bold text-blue-900">Stage-I (Prelims) CBT</td><td className="p-4 font-bold text-blue-900">11 April 2026</td></tr>
+                    <tr><td className="p-4 font-medium">Stage-I Result</td><td className="p-4">Within 2-4 weeks (typical)</td></tr>
+                    <tr className="bg-indigo-50"><td className="p-4 font-bold text-indigo-900">Stage-II (Mains) CBT</td><td className="p-4 font-bold text-indigo-900">30 April 2026</td></tr>
+                    <tr><td className="p-4 font-medium">Final NORCET Merit / Allocation</td><td className="p-4">As notified by AIIMS</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-slate-500 italic">Important: Admit card, shift timing, and reporting instructions are released separately. Always verify exact timings on your admit card.</p>
+            </div>
+          )
+        },
+        {
+          title: "How to Plan Before Each Exam Date",
+          content: (
+            <div className="space-y-4">
+              <ul className="list-disc list-inside space-y-2 text-slate-700 ml-2">
+                <li><strong>30 days before Stage-I:</strong> Focus on high-yield nursing subjects + daily MCQ practice.</li>
+                <li><strong>15 days before Stage-I:</strong> Attempt full-length mocks and reduce new topic intake.</li>
+                <li><strong>Between Stage-I and Stage-II:</strong> Shift to clinical, case-based, and priority nursing questions.</li>
+                <li><strong>Final 72 hours:</strong> Revise short notes, drug charts, protocols, and avoid over-attempting unfamiliar topics.</li>
+              </ul>
+              <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
+                <p className="text-amber-900 text-sm"><strong>Exam-Day Checklist:</strong> Admit card printout, valid photo ID, passport-size photo (if asked), and timely reporting as per shift allotment.</p>
+              </div>
+              <NPrepCTA variant="test" />
+            </div>
+          )
+        }
+      ],
+      faqs: [
+        { question: "What is the NORCET 2026 Stage-I exam date?", answer: "The current NORCET 2026 schedule lists Stage-I (Prelims) on 11 April 2026." },
+        { question: "When is NORCET 2026 Stage-II (Mains)?", answer: "The Stage-II (Mains) exam is scheduled for 30 April 2026." },
+        { question: "Will Stage-I and Stage-II be in online mode?", answer: "Yes, NORCET is conducted as a Computer Based Test (CBT)." },
+        { question: "When is the admit card released?", answer: "AIIMS releases admit cards in a separate notice, generally a few days before the exam date." },
+        { question: "Can exam dates change after notification?", answer: "Yes, AIIMS can revise timelines due to administrative reasons. Always follow the latest official notice." },
+        { question: "How much gap is usually there between Stage-I and Stage-II?", answer: "The gap can be short, so candidates should begin mains-focused preparation immediately after Stage-I." },
+        { question: "Where should I check official updates?", answer: "Use aiimsexams.ac.in under the recruitment/NORCET section for authentic updates." },
+        { question: "Is there a single shift for all candidates?", answer: "Not always. AIIMS may allot different shifts/centres depending on candidate volume." },
+        { question: "What if I miss my reporting time?", answer: "Late entry is generally not allowed once gates close, so reach early as per admit card instructions." },
+        { question: "Should I rely on social media exam-date posts?", answer: "No. Treat social media as secondary and confirm every update from the official AIIMS site." }
+      ]
+    }
+  },
+  "norcet-eligibility": {
+    slug: "norcet-eligibility",
+    title: "AIIMS NORCET Eligibility Criteria 2026 (Age, Qualification, Experience)",
+    description: "Complete NORCET eligibility guide including educational qualification, registration, age limit, and category-wise relaxation.",
+    lastUpdated: "2026-03-02",
+    content: {
+      intro: "AIIMS NORCET eligibility is primarily checked on educational qualification, nursing council registration, age, and where applicable, post-qualification experience. Candidates must satisfy every criterion by the cut-off date mentioned in the official notification.",
+      highlights: [
+        { label: "Minimum Age", value: "18 Years" },
+        { label: "Upper Age (General)", value: "30 Years" },
+        { label: "Qualification Route 1", value: "B.Sc. Nursing / Post-Basic B.Sc. Nursing" },
+        { label: "Qualification Route 2", value: "Diploma (GNM) + 2 Years Experience" },
+        { label: "Mandatory", value: "Registered Nurse & Midwife" }
+      ],
+      sections: [
+        {
+          title: "Who is Eligible for NORCET?",
+          content: (
+            <div className="space-y-4">
+              <p className="text-slate-700">Candidates generally qualify through either a degree route or a diploma + experience route. The exact wording in the official notification should be treated as final.</p>
+              <div className="bg-white border border-gray-200 rounded-lg overflow-hidden">
+                <table className="min-w-full text-sm text-left">
+                  <thead className="bg-slate-100 font-bold text-slate-800">
+                    <tr>
+                      <th className="p-4">Criteria</th>
+                      <th className="p-4">Requirement</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-gray-200">
+                    <tr>
+                      <td className="p-4 font-medium">Educational Qualification (Option 1)</td>
+                      <td className="p-4">B.Sc. (Hons.) Nursing / B.Sc. Nursing / Post-Basic B.Sc. Nursing from a recognized institute/university.</td>
+                    </tr>
+                    <tr>
+                      <td className="p-4 font-medium">Educational Qualification (Option 2)</td>
+                      <td className="p-4">Diploma in General Nursing Midwifery (GNM) from a recognized institute.</td>
+                    </tr>
+                    <tr>
+                      <td className="p-4 font-medium">Registration</td>
+                      <td className="p-4">Registered as Nurse & Midwife with State/Indian Nursing Council.</td>
+                    </tr>
+                    <tr>
+                      <td className="p-4 font-medium">Experience (for GNM route)</td>
+                      <td className="p-4">Minimum 2 years of experience in a 50-bedded hospital after acquiring qualification/registration (as specified by AIIMS).</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          )
+        },
+        {
+          title: "Age Limit & Relaxation",
+          content: (
+            <div className="space-y-4">
+              <p className="text-slate-700">For most NORCET cycles, the core age bracket is 18 to 30 years for unreserved candidates. Relaxation is applied as per Government of India rules.</p>
+              <ul className="list-disc list-inside space-y-1 text-slate-700 ml-2">
+                <li><strong>OBC (NCL):</strong> Up to 3 years relaxation.</li>
+                <li><strong>SC/ST:</strong> Up to 5 years relaxation.</li>
+                <li><strong>PwBD:</strong> Additional relaxation as per central recruitment norms.</li>
+                <li><strong>Ex-Servicemen / other categories:</strong> As per detailed notification terms.</li>
+              </ul>
+              <div className="bg-red-50 border border-red-200 rounded-lg p-4">
+                <p className="text-red-900 text-sm"><strong>Document Alert:</strong> OBC(NCL)/EWS certificates must be valid for the financial year mentioned in the notification. Expired or wrongly formatted certificates may lead to rejection.</p>
+              </div>
+              <NPrepCTA variant="general" />
+            </div>
+          )
+        }
+      ],
+      faqs: [
+        { question: "Can final-year B.Sc Nursing students apply for NORCET?", answer: "Usually, candidates must possess required qualification and registration by the cut-off date. Check the current cycle notification for final-year provisions, if any." },
+        { question: "Is GNM eligible for NORCET?", answer: "Yes, GNM candidates are generally eligible if they also meet the required post-qualification experience criteria." },
+        { question: "Is nursing council registration mandatory?", answer: "Yes, valid registration as Nurse & Midwife is a core eligibility condition." },
+        { question: "What is the age limit for general category?", answer: "The usual age limit is 18 to 30 years, subject to cycle-specific notification rules." },
+        { question: "Do OBC candidates get age relaxation?", answer: "Yes, OBC (NCL) candidates usually receive relaxation as per Government norms." },
+        { question: "Is hospital experience compulsory for B.Sc Nursing candidates?", answer: "Typically no for B.Sc route, but it is generally required for GNM route. Verify exact wording in current notice." },
+        { question: "Can male nurses apply?", answer: "Yes, eligible male and female candidates can apply if all criteria are fulfilled." },
+        { question: "Is there any domicile restriction for NORCET?", answer: "NORCET is a national-level recruitment exam, so candidates from all states can apply, subject to eligibility." },
+        { question: "Do I need INC registration only, or State Council registration also works?", answer: "Registration with State Nursing Council/Indian Nursing Council as accepted in notification is generally valid." },
+        { question: "What is the most common reason for rejection at document stage?", answer: "Mismatch in qualification dates, invalid category certificate, and incomplete registration proof are common reasons." }
+      ]
+    }
+  },
   "norcet-application-form": createPlaceholder("norcet-application-form", "NORCET 2026 Application Form"),
   "norcet-admit-card": createPlaceholder("norcet-admit-card", "NORCET 2026 Admit Card"),
   "norcet-cut-off": createPlaceholder("norcet-cut-off", "NORCET Previous Year Cut-off"),
