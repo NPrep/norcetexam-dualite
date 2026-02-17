@@ -397,9 +397,6 @@ export const pillarPages: Record<string, PillarPageData> = {
   "norcet-exam-date": createPlaceholder("norcet-exam-date", "AIIMS NORCET 2026 Exam Date"),
   "norcet-eligibility": createPlaceholder("norcet-eligibility", "NORCET 2026 Eligibility Criteria"),
   "norcet-application-form": createPlaceholder("norcet-application-form", "NORCET 2026 Application Form"),
-  "norcet-admit-card": createPlaceholder("norcet-admit-card", "NORCET 2026 Admit Card"),
-  "norcet-cut-off": createPlaceholder("norcet-cut-off", "NORCET Previous Year Cut-off"),
-  "norcet-result": createPlaceholder("norcet-result", "NORCET 2026 Results"),
   "aiims-nursing-officer-recruitment": createPlaceholder("aiims-nursing-officer-recruitment", "AIIMS Nursing Officer Recruitment"),
 };
 

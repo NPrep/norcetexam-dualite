@@ -23,9 +23,6 @@ export const Footer = () => {
             <h3 className="text-white text-lg font-bold mb-4">Quick Links</h3>
             <ul className="space-y-2 text-sm">
               <li><Link to="/norcet-notification" className="hover:text-white transition-colors">Latest Notification</Link></li>
-              <li><Link to="/norcet-admit-card" className="hover:text-white transition-colors">Admit Card</Link></li>
-              <li><Link to="/norcet-result" className="hover:text-white transition-colors">Check Results</Link></li>
-              <li><Link to="/norcet-cut-off" className="hover:text-white transition-colors">Previous Cut Offs</Link></li>
             </ul>
           </div>
 
@@ -35,7 +32,6 @@ export const Footer = () => {
               <li><Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
               <li><Link to="/terms" className="hover:text-white transition-colors">Terms of Use</Link></li>
               <li><Link to="/contact" className="hover:text-white transition-colors">Contact Us</Link></li>
-              <li><Link to="/sitemap.xml" className="hover:text-white transition-colors">Sitemap</Link></li>
             </ul>
           </div>
         </div>

@@ -10,11 +10,10 @@ export const OrganizationSchema = () => {
     "name": site.name,
     "url": site.url,
     "logo": `${site.url}${site.logoPath}`,
-    "email": site.email,
     "contactPoint": {
       "@type": "ContactPoint",
       "contactType": "customer service",
-      "email": site.email
+      "telephone": site.phone
     }
   };
 

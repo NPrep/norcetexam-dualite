@@ -9,7 +9,7 @@ export const SiteSchema: React.FC = () => {
     "name": site.name,
     "url": site.url,
     "logo": `${site.url}${site.logoPath}`,
-    "email": site.email
+    "telephone": site.phone
   };
 
   const website = {

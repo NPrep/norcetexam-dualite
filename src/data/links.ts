@@ -13,10 +13,7 @@ export const SITE_LINKS = {
   examDate: "/norcet-exam-date",
   syllabus: "/norcet-syllabus",
   eligibility: "/norcet-eligibility",
-  cutOff: "/norcet-cut-off",
-  result: "/norcet-result",
   apply: "/norcet-application-form",
-  admitCard: "/norcet-admit-card",
   courses: "/courses",
 };
 
