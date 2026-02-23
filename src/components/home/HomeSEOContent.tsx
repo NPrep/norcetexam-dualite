@@ -8,9 +8,9 @@ export const HomeSEOContent = () => {
         <div className="prose prose-slate max-w-none lg:prose-lg">
           
           {/* Introduction */}
-          <h2 className="text-3xl font-bold text-slate-900 mb-6">What is Nursing?</h2>
+          <h2 className="text-3xl font-bold text-slate-900 mb-6">About AIIMS NORCET</h2>
           <p>
-            Nursing is a healthcare profession focused on the care of individuals, families, and communities to maintain or improve their health and well-being. Nurses are trained to provide medical care, support, and education to patients in various settings, including hospitals, clinics, and community health organizations. Their responsibilities include monitoring patients' health, administering medications, assisting in medical procedures, providing emotional support, and educating patients and their families about health conditions and wellness practices. Nursing requires a combination of clinical knowledge, compassion, and strong communication skills to ensure the possible care for patients.
+            The Nursing Officer Recruitment Common Eligibility Test (NORCET) is India&apos;s premier gateway to nursing careers at AIIMS hospitals. Conducted by AIIMS New Delhi, NORCET tests clinical knowledge, nursing fundamentals, and decision-making skills across two stages — Prelims and Mains.
           </p>
 
           <h2 className="text-3xl font-bold text-slate-900 mt-12 mb-6">Nursing Exams 2026</h2>
@@ -53,8 +53,8 @@ export const HomeSEOContent = () => {
                   <td className="px-6 py-4">Conducted by Railway Recruitment Board for Indian Railways posts.</td>
                   <td className="px-6 py-4">Nursing theory, Medical-surgical nursing, Healthcare practices.</td>
                 </tr>
-                <tr>
-                  <td className="px-6 py-4 font-semibold text-blue-700">AIIMS NORCET Exam 2026</td>
+                <tr className="bg-blue-50/60 border-l-4 border-blue-500">
+                  <td className="px-6 py-4 font-semibold text-blue-800">AIIMS NORCET Exam 2026 <span className="ml-2 text-xs font-bold uppercase tracking-wide text-blue-700 bg-blue-100 px-2 py-1 rounded-full">You are here</span></td>
                   <td className="px-6 py-4">AIIMS recruitment for Nursing Officers via NORCET.</td>
                   <td className="px-6 py-4">Medical-surgical nursing, Pediatric nursing, Obstetrics, Gynecology.</td>
                 </tr>

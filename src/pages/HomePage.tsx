@@ -7,121 +7,106 @@ import { NPREP_LINKS, SITE_LINKS } from '../data/links';
 import { blogPosts } from '../data/content';
 import { BlogCardImage } from '../components/ui/BlogCardImage';
 import { TestimonialTicker } from '../components/ui/TestimonialTicker';
-import { 
-  Calendar, 
-  CheckCircle, 
-  BookOpen, 
+import {
+  Calendar,
+  CheckCircle,
+  BookOpen,
   ArrowRight,
   ChevronRight,
   Zap,
   FileText,
-  Award
 } from 'lucide-react';
+
+const categoryStyles: Record<string, string> = {
+  'Study Strategy': 'bg-blue-100 text-blue-700',
+  'Career Guidance': 'bg-green-100 text-green-700',
+  'Downloads & Resources': 'bg-purple-100 text-purple-700',
+  Downloads: 'bg-purple-100 text-purple-700',
+  'Salary & Career': 'bg-amber-100 text-amber-700',
+};
+
+const getBlogDateLabel = (date: string) => {
+  const parsed = new Date(date);
+  if (Number.isNaN(parsed.getTime()) || parsed > new Date()) {
+    return 'Updated for 2026';
+  }
+  return parsed.toLocaleDateString('en-IN', {
+    day: '2-digit',
+    month: 'short',
+    year: 'numeric',
+  });
+};
 
 export const HomePage = () => {
   return (
     <>
-      <SEO 
+      <SEO
         title="AIIMS NORCET 2026 Preparation Hub - Syllabus, Exam Date & Strategy"
         description="Your complete guide to AIIMS NORCET 2026. Get latest notification, exam dates, syllabus, and access top-tier preparation resources like NPrep GOLD Batch and Test Series."
       />
       <OrganizationSchema />
       <WebsiteSchema />
-      
-      {/* Hero Section - Updated for 2026 with Split Layout */}
-      <div className="bg-gradient-to-b from-blue-50 to-white relative overflow-hidden">
-        {/* Background decorative elements */}
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-blue-100/20 skew-x-12 transform origin-top-right"></div>
-        
-        <div className="max-w-7xl mx-auto px-4 pt-12 pb-16 md:pt-20 md:pb-24 relative z-10">
-          <div className="grid lg:grid-cols-12 gap-12 items-center">
-            
-            {/* Left Content */}
-            <div className="lg:col-span-7 text-center lg:text-left">
-              <div className="inline-flex items-center px-3 py-1 rounded-full bg-blue-100 text-blue-800 text-xs font-bold uppercase tracking-wide mb-6">
-                <span className="w-2 h-2 bg-blue-600 rounded-full mr-2 animate-pulse"></span>
-                Updated for NORCET 2026
-              </div>
-              <h1 className="text-4xl md:text-6xl font-extrabold text-slate-900 mb-6 tracking-tight leading-tight">
-                Crack <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">AIIMS NORCET 2026</span>
+
+      <section style={{ background: 'linear-gradient(180deg, var(--bg-light) 0%, #ffffff 100%)' }} className="border-b border-slate-100">
+        <div className="max-w-7xl mx-auto px-4 py-14 md:py-20">
+          <div className="grid lg:grid-cols-10 gap-8 lg:gap-10 items-center">
+            <div className="lg:col-span-6">
+              <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight mb-5">
+                AIIMS NORCET 2026 — Your Complete Preparation Hub
               </h1>
-              <p className="text-lg md:text-xl text-slate-600 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                The ultimate authority resource for Nursing Officer aspirants. Access official updates, detailed syllabus breakdowns, and India's most trusted preparation courses.
+              <p className="text-lg text-slate-600 max-w-2xl mb-8">
+                Get syllabus guidance, eligibility insights, and exam-stage preparation help in one place. This is an independent information resource for aspirants and not an official AIIMS website.
               </p>
-              <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
-                <Link 
-                  to="/norcet-syllabus" 
-                  className="inline-flex items-center justify-center px-8 py-4 bg-slate-900 text-white font-bold rounded-xl hover:bg-slate-800 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link
+                  to="/norcet-syllabus"
+                  className="inline-flex items-center justify-center px-7 py-3.5 rounded-xl bg-green-600 text-white font-semibold hover:bg-green-700 transition-colors"
                 >
-                  View Syllabus
+                  View Full Syllabus
                 </Link>
-                <Link 
-                  to="/norcet-notification" 
-                  className="inline-flex items-center justify-center px-8 py-4 bg-white text-slate-700 border border-gray-200 font-bold rounded-xl hover:bg-gray-50 hover:text-blue-600 transition-all shadow-sm hover:shadow-md"
+                <Link
+                  to="/norcet-eligibility"
+                  className="inline-flex items-center justify-center px-7 py-3.5 rounded-xl border border-slate-300 text-slate-700 font-semibold hover:bg-slate-50 transition-colors"
                 >
-                  Latest Updates
+                  Check Eligibility
                 </Link>
               </div>
             </div>
 
-            {/* Right CTA Card */}
-            <div className="lg:col-span-5">
-              <div className="bg-white rounded-2xl shadow-2xl border border-blue-100 p-8 relative overflow-hidden transform transition-transform hover:scale-[1.02] duration-300">
-                <div className="absolute top-0 right-0 w-24 h-24 bg-yellow-400 rounded-full -mr-10 -mt-10 opacity-20 blur-2xl"></div>
-                
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="bg-yellow-100 p-2 rounded-lg text-yellow-700">
-                    <Award size={24} />
-                  </div>
-                  <span className="text-xs font-bold text-yellow-700 bg-yellow-50 px-2 py-1 rounded uppercase tracking-wider">
-                    Recommended
-                  </span>
-                </div>
-
-                <h3 className="text-2xl font-bold text-slate-900 mb-2">
-                  Crack NORCET 2026 with <span className="text-blue-600">NPrep GOLD</span>
-                </h3>
-                <p className="text-slate-600 mb-6 text-sm leading-relaxed">
-                  Join India's #1 Nursing Officer coaching. 900+ hours of clinical theory, daily tests, and rapid revision.
-                </p>
-
-                <ul className="space-y-3 mb-8">
-                  {['Complete Syllabus Coverage', 'Clinical Scenario Training', 'Daily Test Series'].map((feat, i) => (
-                    <li key={i} className="flex items-center text-sm text-slate-700 font-medium">
-                      <CheckCircle className="w-4 h-4 text-green-500 mr-2" /> {feat}
-                    </li>
+            <div className="lg:col-span-4">
+              <div className="card-pattern p-6 md:p-7">
+                <p className="text-xs font-semibold uppercase tracking-wider text-blue-700 mb-2">Exam Timeline</p>
+                <h3 className="text-2xl font-bold text-slate-900 mb-6">NORCET 10 Dates</h3>
+                <div className="space-y-6">
+                  {[
+                    { stage: 'Prelims', date: 'April 11, 2026' },
+                    { stage: 'Mains', date: 'April 30, 2026' },
+                  ].map((item, idx) => (
+                    <div key={item.stage} className="relative pl-8">
+                      <span className="absolute left-0 top-1.5 h-3 w-3 rounded-full bg-blue-600"></span>
+                      {idx === 0 && <span className="absolute left-[5px] top-5 h-12 w-0.5 bg-blue-200"></span>}
+                      <p className="text-sm text-slate-500">{item.stage}</p>
+                      <p className="text-lg font-semibold text-slate-900">{item.date}</p>
+                    </div>
                   ))}
-                </ul>
-
-                <a 
-                  href={NPREP_LINKS.gold} 
-                  target="_blank" 
-                  rel="noreferrer"
-                  className="block w-full py-4 bg-blue-600 text-white text-center font-bold rounded-xl hover:bg-blue-700 transition-all shadow-lg hover:shadow-blue-200"
-                >
-                  Join GOLD Batch
-                </a>
-                <p className="text-center text-xs text-slate-400 mt-3">
-                  Trusted by 50,000+ Aspirants
-                </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
       <div className="max-w-7xl mx-auto px-4 -mt-8 relative z-10 mb-16">
-        {/* Quick Access Grid - Updated to 3 columns */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
           {[
-            { title: "Notifications", icon: FileText, link: SITE_LINKS.notification, color: "text-blue-600" },
-            { title: "Exam Date", icon: Calendar, link: SITE_LINKS.examDate, color: "text-indigo-600" },
-            { title: "Eligibility", icon: CheckCircle, link: SITE_LINKS.eligibility, color: "text-green-600" },
+            { title: 'Notifications', icon: FileText, link: SITE_LINKS.notification, color: 'text-blue-600' },
+            { title: 'Exam Date', icon: Calendar, link: SITE_LINKS.examDate, color: 'text-indigo-600' },
+            { title: 'Eligibility', icon: CheckCircle, link: SITE_LINKS.eligibility, color: 'text-green-600' },
           ].map((item, idx) => (
-            <Link 
-              key={idx} 
-              to={item.link} 
-              className="bg-white p-6 rounded-xl shadow-md border border-gray-100 hover:shadow-xl hover:border-blue-100 transition-all group text-center flex flex-col items-center"
+            <Link
+              key={idx}
+              to={item.link}
+              className="card-pattern p-6 hover:shadow-xl hover:border-blue-100 transition-all group text-center flex flex-col items-center"
             >
               <div className={`p-3 rounded-full bg-gray-50 mb-3 group-hover:bg-blue-50 transition-colors ${item.color}`}>
                 <item.icon size={28} />
@@ -134,55 +119,44 @@ export const HomePage = () => {
 
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-          
-          {/* Main Content */}
           <div className="lg:col-span-2 space-y-16">
-            
-            {/* Student Success Stories */}
             <section className="bg-slate-50 rounded-2xl p-6 md:p-8 border border-slate-100 overflow-hidden">
               <div className="flex items-center justify-between mb-2">
-                <h2 className="text-2xl md:text-3xl font-bold text-slate-900">
-                  Student Success Stories
-                </h2>
+                <h2 className="text-2xl md:text-3xl font-bold text-slate-900">Student Success Stories</h2>
                 <div className="hidden md:flex items-center text-sm text-slate-500">
-                  <span className="w-2 h-2 rounded-full bg-green-50 mr-2"></span>
+                  <span className="w-2 h-2 rounded-full bg-green-500 mr-2"></span>
                   Verified Reviews
                 </div>
               </div>
               <p className="text-slate-600 mb-6">See what our GOLD Batch students have to say.</p>
-              
               <div className="-mx-8">
-                 <TestimonialTicker />
+                <TestimonialTicker />
               </div>
             </section>
 
-            {/* Latest Articles */}
             <section>
               <div className="flex items-center justify-between mb-8">
-                <h2 className="text-2xl md:text-3xl font-bold text-slate-900">
-                  Latest Study Guides
-                </h2>
+                <h2 className="text-2xl md:text-3xl font-bold text-slate-900">Latest Study Guides</h2>
                 <Link to="/blog" className="text-blue-600 font-bold hover:underline flex items-center">
                   View All <ChevronRight className="w-4 h-4" />
                 </Link>
               </div>
-              
+
               <div className="space-y-6">
                 {blogPosts.slice(0, 4).map((post) => (
                   <article key={post.slug} className="flex flex-col md:flex-row gap-6 bg-white p-4 rounded-2xl border border-gray-100 hover:border-blue-100 hover:shadow-lg transition-all group">
-                    {/* Thumbnail for Home Feed */}
                     <div className="w-full md:w-1/3 flex-shrink-0">
                       <Link to={`/blog/${post.slug}`} className="block rounded-xl overflow-hidden">
-                        <BlogCardImage 
-                          post={post}
-                          className="transform transition-transform duration-500 group-hover:scale-105"
-                        />
+                        <BlogCardImage post={post} className="transform transition-transform duration-500 group-hover:scale-105" />
                       </Link>
                     </div>
 
                     <div className="flex-1 py-2">
-                      <div className="flex items-center gap-3 mb-2">
-                        <span className="text-xs text-gray-400">{post.date}</span>
+                      <div className="flex items-center gap-3 mb-3 flex-wrap">
+                        <span className={`px-2.5 py-1 text-xs font-semibold rounded-full ${categoryStyles[post.category] ?? 'bg-slate-100 text-slate-700'}`}>
+                          {post.category.includes('Downloads') ? 'Downloads' : post.category}
+                        </span>
+                        <span className="text-xs text-gray-500">{getBlogDateLabel(post.date)}</span>
                       </div>
                       <h3 className="text-xl font-bold text-slate-900 mb-3 leading-snug">
                         <Link to={`/blog/${post.slug}`} className="hover:text-blue-600 transition-colors">
@@ -198,25 +172,36 @@ export const HomePage = () => {
               </div>
             </section>
 
+            <section className="rounded-2xl p-7 md:p-8 text-white" style={{ background: 'linear-gradient(135deg, #1e3a5f 0%, #1a56db 100%)' }}>
+              <div className="flex flex-wrap items-center justify-between gap-6">
+                <div>
+                  <span className="inline-flex bg-white/20 text-white text-xs font-semibold px-2.5 py-1 rounded-full mb-3">From NPrep</span>
+                  <h3 className="text-2xl md:text-3xl font-bold mb-2">Crack NORCET 2026 with NPrep GOLD</h3>
+                  <p className="text-blue-100 text-sm md:text-base">900+ hours • Daily Tests • AI Analytics</p>
+                </div>
+                <a
+                  href={NPREP_LINKS.gold}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center justify-center px-6 py-3 bg-white text-blue-700 font-bold rounded-xl hover:bg-blue-50 transition-colors"
+                >
+                  Explore GOLD Batch
+                </a>
+              </div>
+            </section>
           </div>
 
-          {/* Sidebar */}
           <aside className="space-y-8">
-            {/* Sticky Widget */}
             <div className="sticky top-24 space-y-8">
-              
-              {/* Daily Test Widget */}
               <div className="bg-gradient-to-br from-indigo-600 to-blue-700 rounded-2xl p-6 text-white shadow-xl">
                 <div className="flex items-start justify-between mb-4">
                   <h3 className="text-xl font-bold">Free Daily Test</h3>
                   <Zap className="w-6 h-6 text-yellow-300" />
                 </div>
-                <p className="text-blue-100 text-sm mb-6">
-                  Challenge yourself with 20 new questions every day. Build consistency.
-                </p>
-                <a 
-                  href={NPREP_LINKS.dailyTest} 
-                  target="_blank" 
+                <p className="text-blue-100 text-sm mb-6">Challenge yourself with 20 new questions every day. Build consistency.</p>
+                <a
+                  href={NPREP_LINKS.dailyTest}
+                  target="_blank"
                   rel="noreferrer"
                   className="block w-full py-3 bg-white text-blue-700 text-center font-bold rounded-xl hover:bg-blue-50 transition-colors"
                 >
@@ -224,20 +209,19 @@ export const HomePage = () => {
                 </a>
               </div>
 
-              {/* Quick Links Widget */}
               <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
                 <h3 className="font-bold text-slate-900 mb-4 flex items-center">
                   <BookOpen className="w-5 h-5 mr-2 text-blue-600" /> Essential Pages
                 </h3>
                 <nav className="space-y-1">
                   {[
-                    { name: "Syllabus & Pattern", link: SITE_LINKS.syllabus },
-                    { name: "Exam Date Info", link: SITE_LINKS.examDate },
-                    { name: "Application Form", link: SITE_LINKS.apply },
+                    { name: 'Syllabus & Pattern', link: SITE_LINKS.syllabus },
+                    { name: 'Exam Date Info', link: SITE_LINKS.examDate },
+                    { name: 'Application Form', link: SITE_LINKS.apply },
                   ].map((item, idx) => (
-                    <Link 
+                    <Link
                       key={idx}
-                      to={item.link} 
+                      to={item.link}
                       className="block px-3 py-2 rounded-lg text-slate-600 hover:bg-gray-50 hover:text-blue-600 transition-colors text-sm font-medium"
                     >
                       {item.name}
@@ -246,28 +230,18 @@ export const HomePage = () => {
                 </nav>
               </div>
 
-              {/* Free Resources Widget */}
               <div className="bg-green-50 rounded-2xl border border-green-100 p-6">
                 <h3 className="font-bold text-green-900 mb-2">Free Study Material</h3>
-                <p className="text-sm text-green-800 mb-4">
-                  Access notes, PDFs, and previous papers for free.
-                </p>
-                <a 
-                  href={NPREP_LINKS.free} 
-                  target="_blank" 
-                  rel="noreferrer"
-                  className="text-sm font-bold text-green-700 hover:text-green-900 flex items-center"
-                >
+                <p className="text-sm text-green-800 mb-4">Access notes, PDFs, and previous papers for free.</p>
+                <a href={NPREP_LINKS.free} target="_blank" rel="noreferrer" className="text-sm font-bold text-green-700 hover:text-green-900 flex items-center">
                   Access Library <ArrowRight className="w-4 h-4 ml-1" />
                 </a>
               </div>
-
             </div>
           </aside>
         </div>
       </div>
 
-      {/* SEO Content Block - Placed just before footer */}
       <HomeSEOContent />
     </>
   );
