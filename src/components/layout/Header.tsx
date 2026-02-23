@@ -92,6 +92,12 @@ export const Header = () => {
           </div>
         </div>
       )}
+      <div className="bg-amber-100 text-amber-900 text-center text-[13px] px-4 py-2 border-t border-amber-200">
+        This is an independent preparation resource, not affiliated with AIIMS. Official info:{' '}
+        <a href="https://www.aiimsexams.ac.in" target="_blank" rel="noreferrer" className="font-semibold underline underline-offset-2 hover:text-amber-950">
+          aiimsexams.ac.in
+        </a>
+      </div>
     </header>
   );
 };
