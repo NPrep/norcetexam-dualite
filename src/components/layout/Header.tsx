@@ -71,7 +71,7 @@ export const Header = () => {
 
       {/* Mobile Nav */}
       {isMenuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg max-h-[90vh] overflow-y-auto">
+        <div className="md:hidden nprep-mobile-drawer">
           <div className="px-4 pt-2 pb-6 space-y-2">
             <Link to="/norcet-notification" className="block px-3 py-3 rounded-md text-base font-bold text-slate-800 hover:bg-blue-50 hover:text-blue-600 flex items-center" onClick={() => setIsMenuOpen(false)}>
               <Bell className="w-4 h-4 mr-2 text-red-500" /> Notifications

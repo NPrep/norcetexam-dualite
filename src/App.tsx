@@ -25,7 +25,7 @@ function App({ initialPath = '/' }: AppProps) {
       <ScrollToTop />
       <div className="flex flex-col min-h-screen bg-white font-sans text-slate-900">
         <Header />
-        <main className="flex-grow">
+        <main id="main-content" className="flex-grow">
           <Routes>
             <Route path="/" element={<HomePage />} />
             
