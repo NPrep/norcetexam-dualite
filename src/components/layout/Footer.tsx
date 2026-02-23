@@ -39,7 +39,7 @@ export const Footer = () => {
         {/* Powered By Section */}
         <div className="border-t border-slate-800 mt-12 pt-8 flex flex-col items-center">
           <div className="mb-8 flex flex-col items-center group">
-             <span className="text-[10px] uppercase tracking-widest text-slate-500 mb-2 font-semibold">In Association With</span>
+             <span className="text-[10px] tracking-widest text-slate-500 mb-2 font-semibold">In association with NPrep</span>
              <a 
                href={NPREP_LINKS.home} 
                target="_blank" 
@@ -56,7 +56,7 @@ export const Footer = () => {
              </a>
           </div>
 
-          <p className="text-xs text-slate-500 mb-2 text-center max-w-2xl">
+          <p className="nprep-disclaimer-banner text-xs text-slate-500 mb-2 text-center max-w-2xl">
             Disclaimer: norcetexam.com is an independent informational website and is not affiliated with AIIMS. Official updates are published on aiimsexams.ac.in.
           </p>
           <p className="text-sm text-slate-400">
