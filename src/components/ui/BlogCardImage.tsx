@@ -11,7 +11,7 @@ export const BlogCardImage: React.FC<BlogCardImageProps> = ({ post, className = 
   if (post.imageUrl) {
     return (
       <div className={`relative w-full aspect-video overflow-hidden ${className}`}>
-        <img 
+        <img loading="lazy" 
           src={post.imageUrl} 
           alt={post.title} 
           className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
