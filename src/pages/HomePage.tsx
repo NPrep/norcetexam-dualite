@@ -2,40 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/seo/SEO';
 import { OrganizationSchema, WebsiteSchema } from '../components/seo/Schema';
-import { HomeSEOContent } from '../components/home/HomeSEOContent';
 import { NPREP_LINKS, SITE_LINKS } from '../data/links';
-import { blogPosts } from '../data/content';
-import { BlogCardImage } from '../components/ui/BlogCardImage';
 import { TestimonialTicker } from '../components/ui/TestimonialTicker';
 import {
   Calendar,
   CheckCircle,
   BookOpen,
-  ArrowRight,
-  ChevronRight,
-  Zap,
   FileText,
 } from 'lucide-react';
-
-const categoryStyles: Record<string, string> = {
-  'Study Strategy': 'bg-blue-100 text-blue-700',
-  'Career Guidance': 'bg-green-100 text-green-700',
-  'Downloads & Resources': 'bg-purple-100 text-purple-700',
-  Downloads: 'bg-purple-100 text-purple-700',
-  'Salary & Career': 'bg-amber-100 text-amber-700',
-};
-
-const getBlogDateLabel = (date: string) => {
-  const parsed = new Date(date);
-  if (Number.isNaN(parsed.getTime()) || parsed > new Date()) {
-    return 'Updated for 2026';
-  }
-  return parsed.toLocaleDateString('en-IN', {
-    day: '2-digit',
-    month: 'short',
-    year: 'numeric',
-  });
-};
 
 export const HomePage = () => {
   return (
@@ -134,44 +108,6 @@ export const HomePage = () => {
               </div>
             </section>
 
-            <section>
-              <div className="flex items-center justify-between mb-8">
-                <h2 className="text-2xl md:text-3xl font-bold text-slate-900">Latest Study Guides</h2>
-                <Link to="/blog" className="text-blue-600 font-bold hover:underline flex items-center">
-                  View All <ChevronRight className="w-4 h-4" />
-                </Link>
-              </div>
-
-              <div className="space-y-6">
-                {blogPosts.slice(0, 4).map((post) => (
-                  <article key={post.slug} className="flex flex-col md:flex-row gap-6 bg-white p-4 rounded-2xl border border-gray-100 hover:border-blue-100 hover:shadow-lg transition-all group">
-                    <div className="w-full md:w-1/3 flex-shrink-0">
-                      <Link to={`/blog/${post.slug}`} className="block rounded-xl overflow-hidden">
-                        <BlogCardImage post={post} className="transform transition-transform duration-500 group-hover:scale-105" />
-                      </Link>
-                    </div>
-
-                    <div className="flex-1 py-2">
-                      <div className="flex items-center gap-3 mb-3 flex-wrap">
-                        <span className={`px-2.5 py-1 text-xs font-semibold rounded-full ${categoryStyles[post.category] ?? 'bg-slate-100 text-slate-700'}`}>
-                          {post.category.includes('Downloads') ? 'Downloads' : post.category}
-                        </span>
-                        <span className="text-xs text-gray-500">{getBlogDateLabel(post.date)}</span>
-                      </div>
-                      <h3 className="text-xl font-bold text-slate-900 mb-3 leading-snug">
-                        <Link to={`/blog/${post.slug}`} className="hover:text-blue-600 transition-colors">
-                          {post.title}
-                        </Link>
-                      </h3>
-                      <Link to={`/blog/${post.slug}`} className="text-sm font-bold text-blue-600 hover:text-blue-800 flex items-center mt-4">
-                        Read Article <ArrowRight className="w-4 h-4 ml-1" />
-                      </Link>
-                    </div>
-                  </article>
-                ))}
-              </div>
-            </section>
-
             <section className="rounded-2xl p-7 md:p-8 text-white" style={{ background: 'linear-gradient(135deg, #1e3a5f 0%, #1a56db 100%)' }}>
               <div className="flex flex-wrap items-center justify-between gap-6">
                 <div>
@@ -194,18 +130,20 @@ export const HomePage = () => {
           <aside className="space-y-8">
             <div className="sticky top-24 space-y-8">
               <div className="bg-gradient-to-br from-indigo-600 to-blue-700 rounded-2xl p-6 text-white shadow-xl">
-                <div className="flex items-start justify-between mb-4">
-                  <h3 className="text-xl font-bold">Free Daily Test</h3>
-                  <Zap className="w-6 h-6 text-yellow-300" />
-                </div>
-                <p className="text-blue-100 text-sm mb-6">Challenge yourself with 20 new questions every day. Build consistency.</p>
+                <h3 className="text-2xl font-bold mb-4">Prepare for NORCET with NPrep</h3>
+                <ul className="space-y-2 text-blue-100 text-sm mb-6 list-disc pl-5">
+                  <li>AIIMS-level mock tests</li>
+                  <li>structured study plans</li>
+                  <li>previous year papers</li>
+                  <li>nursing question bank</li>
+                </ul>
                 <a
-                  href={NPREP_LINKS.dailyTest}
+                  href="https://nprep.in"
                   target="_blank"
                   rel="noreferrer"
                   className="block w-full py-3 bg-white text-blue-700 text-center font-bold rounded-xl hover:bg-blue-50 transition-colors"
                 >
-                  Take Today's Test
+                  Visit NPrep
                 </a>
               </div>
 
@@ -230,19 +168,10 @@ export const HomePage = () => {
                 </nav>
               </div>
 
-              <div className="bg-green-50 rounded-2xl border border-green-100 p-6">
-                <h3 className="font-bold text-green-900 mb-2">Free Study Material</h3>
-                <p className="text-sm text-green-800 mb-4">Access notes, PDFs, and previous papers for free.</p>
-                <a href={NPREP_LINKS.free} target="_blank" rel="noreferrer" className="text-sm font-bold text-green-700 hover:text-green-900 flex items-center">
-                  Access Library <ArrowRight className="w-4 h-4 ml-1" />
-                </a>
-              </div>
             </div>
           </aside>
         </div>
       </div>
-
-      <HomeSEOContent />
     </>
   );
 };
