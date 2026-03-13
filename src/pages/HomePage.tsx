@@ -52,10 +52,12 @@ export const HomePage = () => {
           <div className="grid lg:grid-cols-10 gap-8 lg:gap-10 items-center">
             <div className="lg:col-span-6">
               <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight mb-5">
-                AIIMS NORCET 2026 — Your Complete Preparation Hub
+                AIIMS NORCET Information Portal
               </h1>
               <p className="text-lg text-slate-600 max-w-2xl mb-8">
-                Get syllabus guidance, eligibility insights, and exam-stage preparation help in one place. This is an independent information resource for aspirants and not an official AIIMS website.
+                Get official NORCET notifications, eligibility, exam pattern and application guidance.
+                <br />
+                For preparation and mock tests visit NPrep.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
