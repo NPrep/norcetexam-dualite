@@ -14,6 +14,18 @@ import { PYQPage } from './pages/PYQPage';
 import ScrollToTop from './components/utils/ScrollToTop';
 import { RouterWrapper } from './next/RouterWrapper';
 
+type ExternalRedirectPageProps = {
+  to: string;
+};
+
+function ExternalRedirectPage({ to }: ExternalRedirectPageProps) {
+  React.useEffect(() => {
+    window.location.replace(to);
+  }, [to]);
+
+  return null;
+}
+
 type AppProps = {
   initialPath?: string;
 };
@@ -41,13 +53,11 @@ function App({ initialPath = '/' }: AppProps) {
             {/* Feature Pages */}
             <Route path="/previous-year-papers" element={<PYQPage />} />
 
-            {/* Removed Pages */}
-            <Route path="/courses" element={<Navigate to="/" replace />} />
-            <Route path="/study-plan-norcet" element={<Navigate to="/" replace />} />
-            <Route path="/norcet-preparation-strategy" element={<Navigate to="/" replace />} />
-            <Route path="/free-study-material" element={<Navigate to="/" replace />} />
-            <Route path="/free-daily-test" element={<Navigate to="/" replace />} />
-            <Route path="/best-books-for-norcet" element={<Navigate to="/" replace />} />
+            {/* External Redirects */}
+            <Route path="/courses" element={<ExternalRedirectPage to="https://nprep.in" />} />
+            <Route path="/study-plan-norcet" element={<ExternalRedirectPage to="https://nprep.in/norcet-preparation" />} />
+            <Route path="/norcet-preparation-strategy" element={<ExternalRedirectPage to="https://nprep.in/norcet-preparation" />} />
+            <Route path="/best-books-for-norcet" element={<ExternalRedirectPage to="https://nprep.in/norcet-preparation" />} />
             
             {/* Pillar Pages Routing */}
             <Route path="/:slug" element={<PillarPage />} />
