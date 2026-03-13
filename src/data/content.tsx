@@ -1074,7 +1074,7 @@ export const blogPosts: BlogPostData[] = [
             { title: "Analysis of NORCET Trends (2020-2025)", url: "/blog/norcet-previous-year-questions" },
             { title: "3 Month Study Plan for NORCET", url: "/blog/norcet-study-plan-3-months" },
             { title: "NORCET Syllabus Breakdown", url: "/norcet-syllabus" },
-            { title: "Join NPrep Test Series", url: "/courses" },
+            { title: "Join NPrep Test Series", url: "/blog" },
             { title: "Check Exam Eligibility", url: "/norcet-eligibility" },
             { title: "Latest Exam Notifications", url: "/norcet-notification" }
           ]}
@@ -1243,7 +1243,7 @@ export const blogPosts: BlogPostData[] = [
             { title: "Check NORCET Eligibility", url: "/norcet-eligibility" },
             { title: "Download Previous Year Papers", url: "/previous-year-papers" },
             { title: "Latest Exam Notifications", url: "/norcet-notification" },
-            { title: "Join NPrep GOLD Batch", url: "/courses" }
+            { title: "Join NPrep GOLD Batch", url: "/blog" }
           ]}
         />
       </>
@@ -1380,7 +1380,7 @@ export const blogPosts: BlogPostData[] = [
             { title: "Download NORCET PYQ Papers", url: "/blog/norcet-previous-year-question-papers-pdf" },
             { title: "3 Month Study Plan", url: "/blog/norcet-study-plan-3-months" },
             { title: "NORCET Syllabus Breakdown", url: "/norcet-syllabus" },
-            { title: "Join NPrep Test Series", url: "/courses" },
+            { title: "Join NPrep Test Series", url: "/blog" },
             { title: "Nursing Officer Salary", url: "/blog/nursing-officer-salary-8th-pay-commission" },
             { title: "Latest Notifications", url: "/norcet-notification" }
           ]}
