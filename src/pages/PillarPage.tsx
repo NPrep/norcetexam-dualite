@@ -7,6 +7,7 @@ import { pillarPages } from '../data/content';
 import { ChevronRight, Home, Calendar, UserCheck, ShieldCheck } from 'lucide-react';
 import { StickyTOC } from '../components/ui/StickyTOC';
 import { Accordion } from '../components/ui/Accordion';
+import { GlobalArticleCTA } from '../components/ui/GlobalArticleCTA';
 
 // Helper to slugify titles for IDs
 const slugify = (text: string) => {
@@ -172,6 +173,8 @@ export const PillarPage = () => {
                     <Accordion items={content.faqs} />
                   </div>
                 </section>
+
+                <GlobalArticleCTA />
               </div>
             </article>
           </main>
