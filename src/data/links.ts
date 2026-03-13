@@ -14,7 +14,6 @@ export const SITE_LINKS = {
   syllabus: "/norcet-syllabus",
   eligibility: "/norcet-eligibility",
   apply: "/norcet-application-form",
-  courses: "/courses",
 };
 
 export const OFFICIAL_LINKS = {

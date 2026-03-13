@@ -44,10 +44,6 @@ export const Header = () => {
             
             <div className="h-6 w-px bg-gray-200 mx-2"></div>
             
-            {/* Updated Courses Link */}
-            <Link to="/courses" className="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">
-              Courses
-            </Link>
 
             <a 
               href={NPREP_LINKS.gold} 
@@ -82,9 +78,6 @@ export const Header = () => {
             
             <div className="border-t border-gray-100 my-2"></div>
             
-            <Link to="/courses" className="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:bg-blue-50 hover:text-blue-600" onClick={() => setIsMenuOpen(false)}>
-              Courses
-            </Link>
 
             <a href={NPREP_LINKS.gold} target="_blank" rel="noreferrer" className="block w-full text-center mt-4 px-4 py-3 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700">
               Join GOLD Batch
