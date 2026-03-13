@@ -551,6 +551,14 @@ export const pillarPages: Record<string, PillarPageData> = {
     }
   },
   "norcet-application-form": createPlaceholder("norcet-application-form", "NORCET 2026 Application Form"),
+  "what-is-norcet": createPlaceholder("what-is-norcet", "What is NORCET?"),
+  "norcet-full-form": createPlaceholder("norcet-full-form", "NORCET Full Form"),
+  "norcet-age-limit": createPlaceholder("norcet-age-limit", "NORCET Age Limit"),
+  "norcet-exam-pattern": createPlaceholder("norcet-exam-pattern", "NORCET Exam Pattern"),
+  "norcet-selection-process": createPlaceholder("norcet-selection-process", "NORCET Selection Process"),
+  "norcet-application-process": createPlaceholder("norcet-application-process", "NORCET Application Process"),
+  "norcet-admit-card": createPlaceholder("norcet-admit-card", "NORCET Admit Card"),
+  "norcet-vacancy": createPlaceholder("norcet-vacancy", "NORCET Vacancy"),
   "aiims-nursing-officer-recruitment": createPlaceholder("aiims-nursing-officer-recruitment", "AIIMS Nursing Officer Recruitment"),
 };
 
