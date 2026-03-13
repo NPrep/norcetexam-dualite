@@ -5,6 +5,7 @@ import { BreadcrumbSchema } from '../components/seo/Schema';
 import { blogPosts } from '../data/content';
 import { Calendar, ChevronRight, Home, User, Tag } from 'lucide-react';
 import { BlogCardImage } from '../components/ui/BlogCardImage';
+import { GlobalArticleCTA } from '../components/ui/GlobalArticleCTA';
 
 export const BlogPostPage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -89,6 +90,8 @@ export const BlogPostPage = () => {
             <div className="prose prose-slate max-w-none lg:prose-lg">
               {/* Content is now rendered directly as JSX */}
               {post.content}
+
+              <GlobalArticleCTA />
             </div>
           </article>
         </main>
