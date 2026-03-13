@@ -11,7 +11,6 @@ import { ContactPage } from './pages/ContactPage';
 import { PrivacyPolicy } from './pages/PrivacyPolicy';
 import { Terms } from './pages/Terms';
 import { PYQPage } from './pages/PYQPage';
-import { CoursesPage } from './pages/CoursesPage';
 import ScrollToTop from './components/utils/ScrollToTop';
 import { RouterWrapper } from './next/RouterWrapper';
 
@@ -41,7 +40,14 @@ function App({ initialPath = '/' }: AppProps) {
             
             {/* Feature Pages */}
             <Route path="/previous-year-papers" element={<PYQPage />} />
-            <Route path="/courses" element={<CoursesPage />} />
+
+            {/* Removed Pages */}
+            <Route path="/courses" element={<Navigate to="/" replace />} />
+            <Route path="/study-plan-norcet" element={<Navigate to="/" replace />} />
+            <Route path="/norcet-preparation-strategy" element={<Navigate to="/" replace />} />
+            <Route path="/free-study-material" element={<Navigate to="/" replace />} />
+            <Route path="/free-daily-test" element={<Navigate to="/" replace />} />
+            <Route path="/best-books-for-norcet" element={<Navigate to="/" replace />} />
             
             {/* Pillar Pages Routing */}
             <Route path="/:slug" element={<PillarPage />} />
