@@ -2,8 +2,8 @@ import React from 'react';
 
 export const TestimonialTicker = () => {
   return (
-    <section className="bg-[var(--bg-light)] p-12 text-center rounded-2xl border border-[var(--border)]">
-      <h2 className="text-3xl font-semibold text-[var(--text-primary)] mb-4">Hear from real students</h2>
+    <section className="bg-gradient-to-br from-blue-50 to-indigo-100 p-12 text-center rounded-2xl border border-blue-200 shadow-sm">
+      <h2 className="text-3xl font-semibold text-slate-900 mb-4">Hear from real students</h2>
       <a
         href="https://nprep.in/blogs?filter=NORCET+Success+Story"
         target="_blank"
